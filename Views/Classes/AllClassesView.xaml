@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="MVVMGym.Views.BranchesView"
+    x:Class="MVVMGym.Views.AllClassesView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,39 +11,38 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-
         </Grid.ColumnDefinitions>
 
         <DataGrid
             Grid.Row="0"
             Grid.Column="0"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding BranchesList}">
+            ItemsSource="{Binding ClassesList}">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    x:Name="branch_id"
-                    Binding="{Binding Path=branch_id}"
+                    x:Name="class_id"
+                    Binding="{Binding Path=class_id}"
                     Header="id" />
                 <DataGridTextColumn
                     x:Name="name"
                     Binding="{Binding Path=name}"
                     Header="Nazwa" />
                 <DataGridTextColumn
-                    x:Name="address"
-                    Binding="{Binding Path=address}"
-                    Header="Adres" />
+                    x:Name="duration"
+                    Binding="{Binding Path=durationMinutes}"
+                    Header="Czas trwania (min)" />
                 <DataGridTextColumn
-                    x:Name="phone"
-                    Binding="{Binding Path=phone}"
-                    Header="Numer tel" />
+                    x:Name="difficulty"
+                    Binding="{Binding Path=difficulty}"
+                    Header="Poziom trudnosci" />
                 <DataGridTextColumn
-                    x:Name="openTime"
-                    Binding="{Binding Path=openTime}"
+                    x:Name="status"
+                    Binding="{Binding Path=status}"
                     Header="Czas otwarcia" />
                 <DataGridTextColumn
-                    x:Name="closeTime"
-                    Binding="{Binding Path=closeTime}"
-                    Header="closeTime" />
+                    x:Name="branchName"
+                    Binding="{Binding Path=branchName}"
+                    Header="Nazwa siłowni" />
             </DataGrid.Columns>
         </DataGrid>
 

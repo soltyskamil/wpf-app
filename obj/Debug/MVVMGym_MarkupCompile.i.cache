@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kamil\Desktop\MVVMGym2\MVVMGym\App.xaml
-12-792320996
+142079618892
 3-1631190407
-51-139181332
+55-1039581919
 1811862771913
-Themes\Generic.xaml;Views\AllEmployeesView.xaml;Views\AllVendorsView.xaml;Views\BranchesView.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\MembershipPlansView.xaml;Views\NewBranchView.xaml;Views\NewEmployeeView.xaml;Views\NewVendorView.xaml;Views\PromotionsView.xaml;Views\Styles.xaml;
+Themes\Generic.xaml;Views\Classes\AllClassesView.xaml;Views\Classes\NewClassView.xaml;Views\Employees\AllEmployeesView.xaml;Views\Vendors\AllVendorsView.xaml;Views\Branches\BranchesView.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\Memberships\MembershipPlansView.xaml;Views\Branches\NewBranchView.xaml;Views\Employees\NewEmployeeView.xaml;Views\Vendors\NewVendorView.xaml;Views\Promotions\PromotionsView.xaml;Views\Styles.xaml;
 
 True
 

@@ -254,59 +254,75 @@
     </ApplicationDefinition>
     <Compile Include="helpers\BaseCommand.cs" />
     <Compile Include="helpers\TimeSpanConverter.cs" />
-    <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
-    <Compile Include="ViewModels\AddVendorViewModel.cs" />
-    <Compile Include="ViewModels\AllVendorsViewModel.cs" />
-    <Compile Include="ViewModels\BranchesViewModel.cs" />
-    <Compile Include="ViewModels\AllEmployeesViewModel.cs" />
+    <Compile Include="ViewModels\Classes\AddNewClassViewModel.cs" />
+    <Compile Include="ViewModels\Classes\AllClassesViewModel.cs" />
+    <Compile Include="ViewModels\Employees\AddEmployeeViewModel.cs" />
+    <Compile Include="ViewModels\Vendors\AddVendorViewModel.cs" />
+    <Compile Include="ViewModels\Vendors\AllVendorsViewModel.cs" />
+    <Compile Include="ViewModels\Branches\BranchesViewModel.cs" />
+    <Compile Include="ViewModels\Employees\AllEmployeesViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
-    <Compile Include="ViewModels\FormViewModel.cs" />
+    <Compile Include="ViewModels\Form\FormViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\MembershipPlansViewModel.cs" />
-    <Compile Include="ViewModels\NewBranchViewModel.cs" />
-    <Compile Include="ViewModels\PromotionsViewModel.cs" />
+    <Compile Include="ViewModels\Memberships\MembershipPlansViewModel.cs" />
+    <Compile Include="ViewModels\Branches\NewBranchViewModel.cs" />
+    <Compile Include="ViewModels\Promotions\PromotionsViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModel.cs" />
-    <Compile Include="Views\AllEmployeesView.xaml.cs">
+    <Compile Include="Views\Classes\AllClassesView.xaml.cs">
+      <DependentUpon>AllClassesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Classes\NewClassView.xaml.cs">
+      <DependentUpon>NewClassView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employees\AllEmployeesView.xaml.cs">
       <DependentUpon>AllEmployeesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AllVendorsView.xaml.cs">
+    <Compile Include="Views\Vendors\AllVendorsView.xaml.cs">
       <DependentUpon>AllVendorsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AllViewBase.cs" />
-    <Compile Include="Views\BranchesView.xaml.cs">
+    <Compile Include="Views\Branches\BranchesView.xaml.cs">
       <DependentUpon>BranchesView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormViewBase.cs" />
-    <Compile Include="Views\MembershipPlansView.xaml.cs">
+    <Compile Include="Views\Form\FormViewBase.cs" />
+    <Compile Include="Views\Memberships\MembershipPlansView.xaml.cs">
       <DependentUpon>MembershipPlansView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewBranchView.xaml.cs">
+    <Compile Include="Views\Branches\NewBranchView.xaml.cs">
       <DependentUpon>NewBranchView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewEmployeeView.xaml.cs">
+    <Compile Include="Views\Employees\NewEmployeeView.xaml.cs">
       <DependentUpon>NewEmployeeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewVendorView.xaml.cs">
+    <Compile Include="Views\Vendors\NewVendorView.xaml.cs">
       <DependentUpon>NewVendorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PromotionsView.xaml.cs">
+    <Compile Include="Views\Promotions\PromotionsView.xaml.cs">
       <DependentUpon>PromotionsView.xaml</DependentUpon>
     </Compile>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AllEmployeesView.xaml">
+    <Page Include="Views\Classes\AllClassesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AllVendorsView.xaml">
+    <Page Include="Views\Classes\NewClassView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BranchesView.xaml">
+    <Page Include="Views\Employees\AllEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vendors\AllVendorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branches\BranchesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -326,23 +342,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MembershipPlansView.xaml">
+    <Page Include="Views\Memberships\MembershipPlansView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewBranchView.xaml">
+    <Page Include="Views\Branches\NewBranchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewEmployeeView.xaml">
+    <Page Include="Views\Employees\NewEmployeeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewVendorView.xaml">
+    <Page Include="Views\Vendors\NewVendorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PromotionsView.xaml">
+    <Page Include="Views\Promotions\PromotionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

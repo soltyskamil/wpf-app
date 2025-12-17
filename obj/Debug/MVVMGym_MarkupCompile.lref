@@ -1,14 +1,16 @@
 ﻿
 
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Themes\Generic.xaml;;
-FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\AllEmployeesView.xaml;;
-FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\BranchesView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Classes\AllClassesView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Classes\NewClassView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Employees\AllEmployeesView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Vendors\AllVendorsView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Branches\BranchesView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\MainWindow.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\MainWindowResources.xaml;;
-FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\MembershipPlansView.xaml;;
-FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\NewBranchView.xaml;;
-FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\NewVendorView.xaml;;
-FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\PromotionsView.xaml;;
-FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\AllVendorsView.xaml;;
-FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\NewEmployeeView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Memberships\MembershipPlansView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Branches\NewBranchView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Employees\NewEmployeeView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Vendors\NewVendorView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Promotions\PromotionsView.xaml;;
 

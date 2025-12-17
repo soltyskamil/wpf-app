@@ -33,6 +33,8 @@ namespace MVVMGym.ViewModels
             return new List<CommandViewModel> {
                 new CommandViewModel("Employees","AccountGroup" ,new BaseCommand(() => this.ShowAllEmployees())),
                 new CommandViewModel("Add employee","AccountGroup" ,new BaseCommand(() => this.ShowAddNewEmployee())),
+                 new CommandViewModel("Classes","AccountGroup" ,new BaseCommand(() => this.ShowAllClasses())),
+                new CommandViewModel("Add employee","AccountGroup" ,new BaseCommand(() => this.ShowAddClass())),
                 new CommandViewModel("Promotions", "PercentCircle",new BaseCommand(() => this.ShowAllPromotions())),
                 new CommandViewModel("Membership plans","WeightLifter", new BaseCommand(() => this.ShowAllMembershipPlans())),
                 new CommandViewModel("Branches", "SourceBranch", new BaseCommand(() => this.ShowAllBranches())),
@@ -73,7 +75,34 @@ namespace MVVMGym.ViewModels
 
             this.SetActiveWorkspace(workspace);
         }
+        private void ShowAllClasses()
+        {
+            AllClassesViewModel workspace = this.Workspaces.FirstOrDefault(
+                vm => vm is AllClassesViewModel
+                ) as AllClassesViewModel;
 
+            if (workspace == null)
+            {
+                workspace = new AllClassesViewModel();
+                this.Workspaces.Add(workspace);
+            }
+
+            this.SetActiveWorkspace(workspace);
+        }
+        private void ShowAddClass()
+        {
+            AddNewClassViewModel workspace = this.Workspaces.FirstOrDefault(
+                vm => vm is AddNewClassViewModel
+                ) as AddNewClassViewModel;
+
+            if (workspace == null)
+            {
+                workspace = new AddNewClassViewModel();
+                this.Workspaces.Add(workspace);
+            }
+
+            this.SetActiveWorkspace(workspace);
+        }
 
         private void ShowAllEmployees()
         {

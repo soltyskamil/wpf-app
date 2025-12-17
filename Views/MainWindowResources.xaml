@@ -43,6 +43,16 @@
         <vw:AllVendorsView />
     </DataTemplate>
     <!--  //Vendors  -->
+
+    <!--  Classes  -->
+    <DataTemplate DataType="{x:Type vm:AllClassesViewModel}">
+        <vw:AllClassesView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AddNewClassViewModel}">
+        <vw:NewClassView />
+    </DataTemplate>
+
+    <!--  Classes  -->
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="IsTabStop" Value="False" />
 
