@@ -14,12 +14,23 @@ namespace MVVMGym.Models
     
     public partial class Trainers
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Trainers()
+        {
+            this.Classes = new HashSet<Classes>();
+        }
+    
         public int trainer_id { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public System.DateTime hireDate { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public System.DateTime start_date { get; set; }
         public int branch_id { get; set; }
+        public Nullable<System.DateTime> end_date { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
     
         public virtual Branches Branches { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Classes> Classes { get; set; }
     }
 }

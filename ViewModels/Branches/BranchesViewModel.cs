@@ -41,10 +41,7 @@ namespace MVVMGym.ViewModels
                 );
         }
 
-        private void AddBranch()
-        {
-
-        }
+       
 
 
     }

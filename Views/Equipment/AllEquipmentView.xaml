@@ -1,0 +1,67 @@
+﻿<UserControl
+    x:Class="MVVMGym.Views.AllEquipmentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MVVMGym.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Background="White">
+        <DataGrid AutoGenerateColumns="false" ItemsSource="{Binding EquipmentList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    x:Name="id"
+                    Binding="{Binding Path=ID}"
+                    Header="ID" />
+                <DataGridTextColumn
+                    x:Name="Silownia"
+                    Binding="{Binding Path=branchName}"
+                    Header="Silownia" />
+                <DataGridTextColumn
+                    x:Name="name"
+                    Binding="{Binding Path=name}"
+                    Header="Nazwa" />
+
+                <DataGridTextColumn
+                    x:Name="model"
+                    Binding="{Binding Path=model}"
+                    Header="model" />
+
+                <DataGridTextColumn
+                    x:Name="serialNumber"
+                    Binding="{Binding Path=serialNumber}"
+                    Header="Numer seryjny" />
+
+
+
+                <DataGridTextColumn
+                    x:Name="price"
+                    Binding="{Binding Path=price}"
+                    Header="Cena" />
+
+
+                <DataGridTextColumn
+                    x:Name="vendorName"
+                    Binding="{Binding Path=vendorName}"
+                    Header="Dostawca" />
+
+
+                <DataGridTextColumn
+                    x:Name="added"
+                    Binding="{Binding Path=createdAt}"
+                    Header="Dodano" />
+
+                <DataGridTextColumn
+                    x:Name="updated"
+                    Binding="{Binding Path=updatedAt}"
+                    Header="Zmodyfikowano" />
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</UserControl>

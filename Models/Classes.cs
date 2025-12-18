@@ -16,11 +16,17 @@ namespace MVVMGym.Models
     {
         public int class_id { get; set; }
         public string name { get; set; }
-        public int durationMinutes { get; set; }
+        public int duration_minutes { get; set; }
         public string difficulty { get; set; }
         public string status { get; set; }
         public int branch_id { get; set; }
+        public int trainer_id { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
+        public int room_id { get; set; }
     
         public virtual Branches Branches { get; set; }
+        public virtual Rooms Rooms { get; set; }
+        public virtual Trainers Trainers { get; set; }
     }
 }

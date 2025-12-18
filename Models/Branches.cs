@@ -23,14 +23,19 @@ namespace MVVMGym.Models
             this.Invoices = new HashSet<Invoices>();
             this.Rooms = new HashSet<Rooms>();
             this.Trainers = new HashSet<Trainers>();
+            this.Users = new HashSet<Users>();
+            this.Members = new HashSet<Members>();
+            this.MemberInvoices = new HashSet<MemberInvoices>();
         }
     
         public int branch_id { get; set; }
         public string name { get; set; }
         public string address { get; set; }
         public string phone { get; set; }
-        public System.TimeSpan openTime { get; set; }
-        public System.TimeSpan closeTime { get; set; }
+        public System.TimeSpan open_time { get; set; }
+        public System.TimeSpan close_time { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Classes> Classes { get; set; }
@@ -44,5 +49,11 @@ namespace MVVMGym.Models
         public virtual ICollection<Rooms> Rooms { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Trainers> Trainers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Users> Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Members> Members { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MemberInvoices> MemberInvoices { get; set; }
     }
 }

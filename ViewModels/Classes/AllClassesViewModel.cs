@@ -17,6 +17,11 @@ namespace MVVMGym.ViewModels
         public string status { get; set; }
         public string branchName { get; set; }
 
+        public string trainerName { get; set; }
+
+        public DateTime createdAt { get; set; }
+        public DateTime updatedAt { get; set; }
+
     }
 
 
@@ -46,14 +51,18 @@ namespace MVVMGym.ViewModels
             ClassesList = new ObservableCollection<ClassesRow>(
                 base.gymEntities.Classes
                 .Include(r => r.Branches)
+                .Include(r => r.Trainers)
                 .Select(c => new ClassesRow
                 {
                     class_id = c.class_id,
                     name = c.name,
-                    durationMinutes = c.durationMinutes,
+                    durationMinutes = c.duration_minutes,
                     difficulty = c.difficulty,
                     status = c.status,
-                    branchName = c.Branches.name
+                    branchName = c.Branches.name,
+                    trainerName = c.Trainers.first_name,
+                    createdAt = c.created_at,
+                    updatedAt = c.updated_at,
                 })
                );
         }

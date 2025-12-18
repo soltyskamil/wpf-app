@@ -16,12 +16,14 @@ namespace MVVMGym.Models
     {
         public int payroll_id { get; set; }
         public int employee_id { get; set; }
-        public System.DateTime period_start { get; set; }
-        public System.DateTime period_end { get; set; }
+        public System.DateTime start_date { get; set; }
+        public System.DateTime end_date { get; set; }
         public decimal gross { get; set; }
         public decimal net { get; set; }
         public decimal taxes { get; set; }
         public System.DateTime paid_at { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
     
         public virtual Employees Employees { get; set; }
     }

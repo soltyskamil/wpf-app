@@ -15,13 +15,13 @@ namespace MVVMGym.ViewModels
         {
             get
             {
-                return item.firstName;
+                return item.first_name;
             }
             set
             {
-                if (item.firstName != value)
+                if (item.first_name != value)
                 {
-                    item.firstName = value;
+                    item.first_name = value;
                     OnPropertyChanged(() => FirstName);
                 }
             }
@@ -30,13 +30,13 @@ namespace MVVMGym.ViewModels
         {
             get
             {
-                return item.lastName;
+                return item.last_name;
             }
             set
             {
-                if (item.lastName != value)
+                if (item.last_name != value)
                 {
-                    item.lastName = value;
+                    item.last_name = value;
                     OnPropertyChanged(() => LastName);
                 }
             }

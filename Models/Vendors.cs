@@ -17,13 +17,16 @@ namespace MVVMGym.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Vendors()
         {
+            this.Equipment = new HashSet<Equipment>();
             this.Invoices = new HashSet<Invoices>();
         }
     
         public int vendor_id { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Equipment> Equipment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoices> Invoices { get; set; }
     }

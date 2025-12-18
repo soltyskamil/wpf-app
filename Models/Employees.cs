@@ -21,12 +21,14 @@ namespace MVVMGym.Models
         }
     
         public int employee_id { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
         public string sex { get; set; }
-        public System.DateTime dob { get; set; }
-        public int roleId { get; set; }
+        public System.DateTime date_of_birth { get; set; }
+        public int role_id { get; set; }
         public int branch_id { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
     
         public virtual Branches Branches { get; set; }
         public virtual Roles Roles { get; set; }

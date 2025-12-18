@@ -12,13 +12,21 @@ namespace MVVMGym.ViewModels
     {
         public IReadOnlyList<Branches> Branches { get; set; }
         public IReadOnlyList<string> DifficultyList { get; } = new List<string>() { "easy", "mid", "hard"};
+        public IReadOnlyList<Rooms> Rooms { get; set; }
+
+        public IReadOnlyList<Trainers> Trainers { get; set; }
 
         public AddNewClassViewModel():base() {
             base.DisplayName = "New class";
             item = new Classes();
+            item.created_at = DateTime.Now;
+            item.updated_at = DateTime.Now;
+            this.Trainers = base.gymEntites.Trainers.ToList();
             this.Branches = base.gymEntites.Branches.ToList();
+            this.Rooms = base.gymEntites.Rooms.ToList();
             item.difficulty = "easy";
             item.status = "Aktywne";
+            
         }
 
         public override void Save()
@@ -48,15 +56,15 @@ namespace MVVMGym.ViewModels
         {
             get
             {
-                return item.durationMinutes;
+                return item.duration_minutes;
 
 
             }
             set
             {
-                if (item.durationMinutes != value)
+                if (item.duration_minutes != value)
                 {
-                    item.durationMinutes = value;
+                    item.duration_minutes = value;
                     OnPropertyChanged(() => DurationMinutes);
                 }
             }
@@ -115,6 +123,40 @@ namespace MVVMGym.ViewModels
                 }
             }
 
+        }
+
+        public int SelectedTrainerId
+        {
+            get
+            {
+                return item.trainer_id;
+            }
+
+            set
+            {
+                if(item.trainer_id != value)
+                {
+                    item.trainer_id = value;
+                    OnPropertyChanged(() => SelectedTrainerId);
+                }
+            }
+        }
+        
+        public int SelectedRoomId
+        {
+            get
+            {
+                return item.room_id;
+            }
+
+            set
+            {
+                if(item.room_id != value)
+                {
+                    item.room_id = value;
+                    OnPropertyChanged(() => SelectedRoomId);
+                }
+            }
         }
 
     }

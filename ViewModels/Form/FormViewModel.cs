@@ -12,12 +12,12 @@ namespace MVVMGym.ViewModels
     public abstract class FormViewModel<T> : WorkspaceViewModel
     {
 
-        protected GymEntities gymEntites;
+        protected MVVMGymEntities gymEntites;
         protected T item;
 
         public FormViewModel()
         {
-            gymEntites = new GymEntities();
+            gymEntites = new MVVMGymEntities();
         }
 
 

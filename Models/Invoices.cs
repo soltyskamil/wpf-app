@@ -15,14 +15,14 @@ namespace MVVMGym.Models
     public partial class Invoices
     {
         public int invoice_id { get; set; }
-        public Nullable<int> vendor_id { get; set; }
-        public Nullable<int> member_id { get; set; }
+        public int vendor_id { get; set; }
         public int branch_id { get; set; }
-        public decimal amount { get; set; }
-        public int paymentStatus_id { get; set; }
+        public decimal total_amount { get; set; }
+        public int payment_status_id { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
     
         public virtual Branches Branches { get; set; }
-        public virtual Members Members { get; set; }
         public virtual PaymentStatuses PaymentStatuses { get; set; }
         public virtual Vendors Vendors { get; set; }
     }

@@ -38,11 +38,23 @@
                 <DataGridTextColumn
                     x:Name="status"
                     Binding="{Binding Path=status}"
-                    Header="Czas otwarcia" />
+                    Header="Status" />
                 <DataGridTextColumn
                     x:Name="branchName"
                     Binding="{Binding Path=branchName}"
                     Header="Nazwa siłowni" />
+                <DataGridTextColumn
+                    x:Name="trainerName"
+                    Binding="{Binding Path=trainerName}"
+                    Header="Imie trenera" />
+                <DataGridTextColumn
+                    x:Name="created"
+                    Binding="{Binding Path=createdAt}"
+                    Header="Dodano" />
+                <DataGridTextColumn
+                    x:Name="updated"
+                    Binding="{Binding Path=updatedAt}"
+                    Header="Zmodyfikowano" />
             </DataGrid.Columns>
         </DataGrid>
 

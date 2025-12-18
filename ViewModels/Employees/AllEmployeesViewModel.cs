@@ -23,6 +23,9 @@ namespace MVVMGym.ViewModels
         public string Role { get; set; }
 
         public string Branch { get; set; }
+
+        public DateTime createdAt { get; set; }
+        public DateTime updatedAt { get; set; }
     }
 
 
@@ -68,12 +71,14 @@ namespace MVVMGym.ViewModels
                 .Select(i => new EmployeeRow
                 {
                     ID = i.employee_id,
-                    firstName = i.firstName,
-                    lastName = i.lastName,
+                    firstName = i.first_name,
+                    lastName = i.last_name,
                     sex = i.sex,
-                    dob = i.dob,
-                    Role = i.Roles.roleName,
-                    Branch = i.Branches.name
+                    dob = i.date_of_birth,
+                    Role = i.Roles.code,
+                    Branch = i.Branches.name,
+                    createdAt = i.created_at,
+                    updatedAt = i.updated_at,
                 }
                 )
                );

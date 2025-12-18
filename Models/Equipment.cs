@@ -18,9 +18,13 @@ namespace MVVMGym.Models
         public int branch_id { get; set; }
         public string name { get; set; }
         public string model { get; set; }
-        public string serialNumber { get; set; }
-        public System.DateTime purchaseDate { get; set; }
+        public string serial_number { get; set; }
+        public System.DateTime created_at { get; set; }
+        public int price { get; set; }
+        public System.DateTime updated_at { get; set; }
+        public int vendor_id { get; set; }
     
         public virtual Branches Branches { get; set; }
+        public virtual Vendors Vendors { get; set; }
     }
 }

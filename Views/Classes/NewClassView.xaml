@@ -20,6 +20,8 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+
         </Grid.RowDefinitions>
         <Label
             Grid.Row="0"
@@ -48,39 +50,60 @@
             Grid.Row="2"
             Grid.Column="0"
             Margin="0,8,0,8"
-            Content="Poziom trudności" />
+            Content="Poziom trudnosci" />
         <ComboBox
             Grid.Row="2"
             Grid.Column="1"
             ItemsSource="{Binding DifficultyList}"
             SelectedItem="{Binding Difficulty, Mode=TwoWay}" />
 
+
         <Label
             Grid.Row="3"
             Grid.Column="0"
             Margin="0,8,0,8"
-            Content="Status" />
-
-        <TextBlock
-            Grid.Row="3"
-            Grid.Column="1"
-            Margin="0,8,0,8"
-            Text="{Binding Path=Status}" />
-
-
-        <Label
-            Grid.Row="4"
-            Grid.Column="0"
-            Margin="0,8,0,8"
-            Content="Siłownia" />
+            Content="Silownia" />
 
         <ComboBox
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="1"
             DisplayMemberPath="name"
             ItemsSource="{Binding Branches}"
             SelectedValue="{Binding SelectedBranchId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             SelectedValuePath="branch_id" />
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="0,8,0,8"
+            Content="Pomieszczenie" />
+
+        <ComboBox
+            Grid.Row="4"
+            Grid.Column="1"
+            DisplayMemberPath="name"
+            ItemsSource="{Binding Rooms}"
+            SelectedValue="{Binding SelectedRoomId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectedValuePath="room_id" />
+
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Margin="0,8,0,8"
+            Content="Trenerzy" />
+
+        <ComboBox
+            Grid.Row="5"
+            Grid.Column="1"
+            DisplayMemberPath="first_name"
+            ItemsSource="{Binding Trainers}"
+            SelectedValue="{Binding SelectedTrainerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectedValuePath="trainer_id" />
+
+
+
+
+
 
 
     </Grid>

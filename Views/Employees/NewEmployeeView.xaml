@@ -21,6 +21,8 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
+
+
         <Label
             Grid.Row="0"
             Grid.Column="0"
@@ -63,10 +65,10 @@
         <ComboBox
             Grid.Row="3"
             Grid.Column="1"
-            DisplayMemberPath="roleName"
+            DisplayMemberPath="code"
             ItemsSource="{Binding Roles}"
             SelectedValue="{Binding SelectedRoleId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            SelectedValuePath="roleId" />
+            SelectedValuePath="role_id" />
 
         <Label
             Grid.Row="4"

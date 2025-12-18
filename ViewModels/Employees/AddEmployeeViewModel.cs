@@ -17,7 +17,9 @@ namespace MVVMGym.ViewModels
         {
             base.DisplayName = "New employee";
             item = new Employees();
-            item.dob = DateTime.Today;
+            item.date_of_birth = DateTime.Today;
+            item.created_at = DateTime.Today;
+            item.updated_at = DateTime.Today;
             Roles = base.gymEntites.Roles.ToList();
             Branches = base.gymEntites.Branches.ToList();
 
@@ -28,17 +30,20 @@ namespace MVVMGym.ViewModels
             gymEntites.Employees.Add(item);
             gymEntites.SaveChanges();
         }
+
+        
+
         public string FirstName
         {
             get
             {
-                return item.firstName;
+                return item.first_name;
             }
             set
             {
-                if (item.firstName != value)
+                if (item.first_name != value)
                 {
-                    item.firstName = value;
+                    item.first_name = value;
                     OnPropertyChanged(() => FirstName);
                 }
             }
@@ -47,13 +52,13 @@ namespace MVVMGym.ViewModels
         {
             get
             {
-                return item.lastName;
+                return item.last_name;
             }
             set
             {
-                if (item.lastName != value)
+                if (item.last_name != value)
                 {
-                    item.lastName = value;
+                    item.last_name = value;
                     OnPropertyChanged(() => LastName);
                 }
             }
@@ -79,13 +84,13 @@ namespace MVVMGym.ViewModels
         {
             get
             {
-                return item.dob;
+                return item.date_of_birth;
             }
             set
             {
-                if (item.dob != value)
+                if (item.date_of_birth != value)
                 {
-                    item.dob = value;
+                    item.date_of_birth = value;
                     OnPropertyChanged(() => Dob);
                 }
             }
@@ -96,13 +101,13 @@ namespace MVVMGym.ViewModels
             {
 
 
-                return item.roleId;
+                return item.role_id;
             }
             set
             {
-                if (item.roleId != value)
+                if (item.role_id != value)
                 {
-                    item.roleId = value;
+                    item.role_id = value;
                     OnPropertyChanged(() => SelectedRoleId);
                 }
             }

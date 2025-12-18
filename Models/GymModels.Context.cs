@@ -13,10 +13,10 @@ namespace MVVMGym.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GymEntities : DbContext
+    public partial class MVVMGymEntities : DbContext
     {
-        public GymEntities()
-            : base("name=GymEntities")
+        public MVVMGymEntities()
+            : base("name=MVVMGymEntities")
         {
         }
     
@@ -41,5 +41,6 @@ namespace MVVMGym.Models
         public virtual DbSet<Trainers> Trainers { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Vendors> Vendors { get; set; }
+        public virtual DbSet<MemberInvoices> MemberInvoices { get; set; }
     }
 }

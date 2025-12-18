@@ -13,7 +13,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     x:Name="id"
-                    Binding="{Binding Path=employee_id}"
+                    Binding="{Binding Path=ID}"
                     Header="ID" />
                 <DataGridTextColumn
                     x:Name="firstName"
@@ -45,6 +45,15 @@
                     Binding="{Binding Path=Branch}"
                     Header="Branch" />
 
+                <DataGridTextColumn
+                    x:Name="createdAt"
+                    Binding="{Binding Path=createdAt}"
+                    Header="Dodano" />
+
+                <DataGridTextColumn
+                    x:Name="updatedAt"
+                    Binding="{Binding Path=updatedAt}"
+                    Header="Zmodyfikowano" />
 
 
             </DataGrid.Columns>

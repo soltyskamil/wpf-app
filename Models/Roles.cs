@@ -21,8 +21,10 @@ namespace MVVMGym.Models
             this.Users = new HashSet<Users>();
         }
     
-        public int roleId { get; set; }
-        public string roleName { get; set; }
+        public int role_id { get; set; }
+        public string code { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employees> Employees { get; set; }

@@ -14,9 +14,21 @@ namespace MVVMGym.Models
     
     public partial class MembershipPlans
     {
-        public int plan_id { get; set; }
-        public string name { get; set; }
-        public int durationMonths { get; set; }
-        public decimal price { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MembershipPlans()
+        {
+            this.Members = new HashSet<Members>();
+        }
+    
+        public int membership_plan_id { get; set; }
+        public string code { get; set; }
+        public int duration_months { get; set; }
+        public decimal total_price { get; set; }
+        public string description { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Members> Members { get; set; }
     }
 }

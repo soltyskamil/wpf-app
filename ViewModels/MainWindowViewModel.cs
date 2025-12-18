@@ -33,13 +33,18 @@ namespace MVVMGym.ViewModels
             return new List<CommandViewModel> {
                 new CommandViewModel("Employees","AccountGroup" ,new BaseCommand(() => this.ShowAllEmployees())),
                 new CommandViewModel("Add employee","AccountGroup" ,new BaseCommand(() => this.ShowAddNewEmployee())),
-                 new CommandViewModel("Classes","AccountGroup" ,new BaseCommand(() => this.ShowAllClasses())),
-                new CommandViewModel("Add employee","AccountGroup" ,new BaseCommand(() => this.ShowAddClass())),
+                new CommandViewModel("Employees summary", "SourceBranch", new BaseCommand(() => this.ShowEmployeesSummary())),
+                new CommandViewModel("Equipment","AccountGroup" ,new BaseCommand(() => this.ShowAllEquipment())),
+                new CommandViewModel("New Equipment","AccountGroup" ,new BaseCommand(() => this.ShowAddEquipment())),
+                new CommandViewModel("Classes","AccountGroup" ,new BaseCommand(() => this.ShowAllClasses())),
+                new CommandViewModel("Add new class","AccountGroup" ,new BaseCommand(() => this.ShowAddClass())),
                 new CommandViewModel("Promotions", "PercentCircle",new BaseCommand(() => this.ShowAllPromotions())),
                 new CommandViewModel("Membership plans","WeightLifter", new BaseCommand(() => this.ShowAllMembershipPlans())),
                 new CommandViewModel("Branches", "SourceBranch", new BaseCommand(() => this.ShowAllBranches())),
+                new CommandViewModel("Branches summary", "SourceBranch", new BaseCommand(() => this.ShowBranchSummary())),
                 new CommandViewModel("NewBranch", "SourceBranchPlus", new BaseCommand(() => this.ShowNewBranch())),
                 new CommandViewModel("All vendors", "SourceBranchPlus", new BaseCommand(() => this.ShowAllVendors())),
+                new CommandViewModel("Vendors summary", "SourceBranchPlus", new BaseCommand(() => this.ShowVendorsSummary())),
                 new CommandViewModel("New vendor", "AccountGroup", new BaseCommand(() => this.ShowAddVendor())),
             };
         }
@@ -47,6 +52,78 @@ namespace MVVMGym.ViewModels
 
 
         #region Helpers
+        private void ShowEmployeesSummary()
+        {
+            EmployeesSummaryViewModel workspace = this.Workspaces.FirstOrDefault(
+                vm => vm is EmployeesSummaryViewModel
+                ) as EmployeesSummaryViewModel;
+
+            if (workspace == null)
+            {
+                workspace = new EmployeesSummaryViewModel();
+                this.Workspaces.Add(workspace);
+            }
+
+            this.SetActiveWorkspace(workspace);
+        }
+        private void ShowBranchSummary()
+        {
+            BranchSummaryViewModel workspace = this.Workspaces.FirstOrDefault(
+                vm => vm is BranchSummaryViewModel
+                ) as BranchSummaryViewModel;
+
+            if (workspace == null)
+            {
+                workspace = new BranchSummaryViewModel();
+                this.Workspaces.Add(workspace);
+            }
+
+            this.SetActiveWorkspace(workspace);
+        }
+        private void ShowVendorsSummary()
+        {
+            VendorsSummaryViewModel workspace = this.Workspaces.FirstOrDefault(
+                vm => vm is VendorsSummaryViewModel
+                ) as VendorsSummaryViewModel;
+
+            if (workspace == null)
+            {
+                workspace = new VendorsSummaryViewModel();
+                this.Workspaces.Add(workspace);
+            }
+
+            this.SetActiveWorkspace(workspace);
+        }
+        private void ShowAllEquipment()
+        {
+            EquipmentViewModel workspace = this.Workspaces.FirstOrDefault(
+                vm => vm is EquipmentViewModel
+                ) as EquipmentViewModel;
+
+            if (workspace == null)
+            {
+                workspace = new EquipmentViewModel();
+                this.Workspaces.Add(workspace);
+            }
+
+            this.SetActiveWorkspace(workspace);
+        }
+        private void ShowAddEquipment()
+        {
+            AddEquipmentViewModel workspace = this.Workspaces.FirstOrDefault(
+                vm => vm is AddEquipmentViewModel
+                ) as AddEquipmentViewModel;
+
+            if (workspace == null)
+            {
+                workspace = new AddEquipmentViewModel();
+                this.Workspaces.Add(workspace);
+            }
+
+            this.SetActiveWorkspace(workspace);
+        }
+
+
         private void ShowAllVendors()
         {
             AllVendorsViewModel workspace = this.Workspaces.FirstOrDefault(

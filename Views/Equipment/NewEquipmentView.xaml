@@ -1,0 +1,98 @@
+﻿<local:FormViewBase
+    x:Class="MVVMGym.Views.NewEquipmentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MVVMGym.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="0,8,0,8"
+            Content="Nazwa" />
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="0,8,0,8"
+            Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="0,8,0,8"
+            Content="Model" />
+
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,8,0,8"
+            Text="{Binding Path=Model, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="0,8,0,8"
+            Content="Numer seryjny" />
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="{Binding Path=SerialNumber, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="0,8,0,8"
+            Content="Cena" />
+
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="0,8,0,8"
+            Content="Siłownia" />
+
+        <ComboBox
+            Grid.Row="4"
+            Grid.Column="1"
+            DisplayMemberPath="name"
+            ItemsSource="{Binding Branches}"
+            SelectedValue="{Binding SelectedBranchId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectedValuePath="branch_id" />
+
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Margin="0,8,0,8"
+            Content="Dostawca" />
+        <ComboBox
+            Grid.Row="5"
+            Grid.Column="1"
+            DisplayMemberPath="first_name"
+            ItemsSource="{Binding Vendors}"
+            SelectedValue="{Binding SelectedVendorId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectedValuePath="vendor_id" />
+
+    </Grid>
+</local:FormViewBase>

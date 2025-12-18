@@ -16,6 +16,8 @@ namespace MVVMGym.ViewModels
         {
             base.DisplayName = "New branch";
             item = new Branches();
+            item.created_at = DateTime.Now;
+            item.updated_at = DateTime.Now;
         }
 
         public string Phone
@@ -52,14 +54,14 @@ namespace MVVMGym.ViewModels
         { 
             get
             {
-                return item.openTime;
+                return item.open_time;
             }
             set
             {
-                if (item.openTime != value)
+                if (item.open_time != value)
                 {
                     
-                    item.openTime = value;
+                    item.open_time = value;
                     OnPropertyChanged(() => OpenTime);
                 }
             }
@@ -68,13 +70,13 @@ namespace MVVMGym.ViewModels
         {
             get
             {
-                return item.closeTime;
+                return item.close_time;
             }
             set
             {
-                if (item.closeTime != value)
+                if (item.close_time != value)
                 {
-                    item.closeTime = value;
+                    item.close_time = value;
                     OnPropertyChanged(() => CloseTime);
                 }
             }

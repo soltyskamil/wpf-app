@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="MVVMGymModelStoreContainer" CdmEntityContainer="GymEntities">
+  <EntityContainerMapping StorageEntityContainer="MVVMGymModelStoreContainer" CdmEntityContainer="MVVMGymEntities">
     <EntitySetMapping Name="Branches">
       <EntityTypeMapping TypeName="MVVMGymModel.Branches">
         <MappingFragment StoreEntitySet="Branches">
@@ -8,8 +8,10 @@
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="openTime" ColumnName="openTime" />
-          <ScalarProperty Name="closeTime" ColumnName="closeTime" />
+          <ScalarProperty Name="open_time" ColumnName="open_time" />
+          <ScalarProperty Name="close_time" ColumnName="close_time" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -18,10 +20,14 @@
         <MappingFragment StoreEntitySet="Classes">
           <ScalarProperty Name="class_id" ColumnName="class_id" />
           <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="durationMinutes" ColumnName="durationMinutes" />
+          <ScalarProperty Name="duration_minutes" ColumnName="duration_minutes" />
           <ScalarProperty Name="difficulty" ColumnName="difficulty" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="trainer_id" ColumnName="trainer_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="room_id" ColumnName="room_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -29,12 +35,14 @@
       <EntityTypeMapping TypeName="MVVMGymModel.Employees">
         <MappingFragment StoreEntitySet="Employees">
           <ScalarProperty Name="employee_id" ColumnName="employee_id" />
-          <ScalarProperty Name="firstName" ColumnName="firstName" />
-          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
           <ScalarProperty Name="sex" ColumnName="sex" />
-          <ScalarProperty Name="dob" ColumnName="dob" />
-          <ScalarProperty Name="roleId" ColumnName="roleId" />
+          <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
           <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -45,8 +53,11 @@
           <ScalarProperty Name="branch_id" ColumnName="branch_id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="model" ColumnName="model" />
-          <ScalarProperty Name="serialNumber" ColumnName="serialNumber" />
-          <ScalarProperty Name="purchaseDate" ColumnName="purchaseDate" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -55,41 +66,48 @@
         <MappingFragment StoreEntitySet="Invoices">
           <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
           <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
-          <ScalarProperty Name="member_id" ColumnName="member_id" />
           <ScalarProperty Name="branch_id" ColumnName="branch_id" />
-          <ScalarProperty Name="amount" ColumnName="amount" />
-          <ScalarProperty Name="paymentStatus_id" ColumnName="paymentStatus_id" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="payment_status_id" ColumnName="payment_status_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Members">
       <EntityTypeMapping TypeName="MVVMGymModel.Members">
         <MappingFragment StoreEntitySet="Members">
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="promotion_id" ColumnName="promotion_id" />
           <ScalarProperty Name="member_id" ColumnName="member_id" />
-          <ScalarProperty Name="firstName" ColumnName="firstName" />
-          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="join_date" ColumnName="join_date" />
-          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="membership_plan_id" ColumnName="membership_plan_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MembershipPlans">
       <EntityTypeMapping TypeName="MVVMGymModel.MembershipPlans">
         <MappingFragment StoreEntitySet="MembershipPlans">
-          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="durationMonths" ColumnName="durationMonths" />
-          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="membership_plan_id" ColumnName="membership_plan_id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="duration_months" ColumnName="duration_months" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PaymentStatuses">
       <EntityTypeMapping TypeName="MVVMGymModel.PaymentStatuses">
         <MappingFragment StoreEntitySet="PaymentStatuses">
-          <ScalarProperty Name="paymentStatus_id" ColumnName="paymentStatus_id" />
-          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="payment_status_id" ColumnName="payment_status_id" />
+          <ScalarProperty Name="code" ColumnName="code" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -98,30 +116,36 @@
         <MappingFragment StoreEntitySet="Payrolls">
           <ScalarProperty Name="payroll_id" ColumnName="payroll_id" />
           <ScalarProperty Name="employee_id" ColumnName="employee_id" />
-          <ScalarProperty Name="period_start" ColumnName="period_start" />
-          <ScalarProperty Name="period_end" ColumnName="period_end" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
           <ScalarProperty Name="gross" ColumnName="gross" />
           <ScalarProperty Name="net" ColumnName="net" />
           <ScalarProperty Name="taxes" ColumnName="taxes" />
           <ScalarProperty Name="paid_at" ColumnName="paid_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Promotions">
       <EntityTypeMapping TypeName="MVVMGymModel.Promotions">
         <MappingFragment StoreEntitySet="Promotions">
-          <ScalarProperty Name="promo_id" ColumnName="promo_id" />
+          <ScalarProperty Name="promotion_id" ColumnName="promotion_id" />
           <ScalarProperty Name="code" ColumnName="code" />
           <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="discountPercentageAmount" ColumnName="discountPercentageAmount" />
+          <ScalarProperty Name="discount_percentage" ColumnName="discount_percentage" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="MVVMGymModel.Roles">
         <MappingFragment StoreEntitySet="Roles">
-          <ScalarProperty Name="roleId" ColumnName="roleId" />
-          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -132,6 +156,9 @@
           <ScalarProperty Name="branch_id" ColumnName="branch_id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="description" ColumnName="description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -150,10 +177,13 @@
       <EntityTypeMapping TypeName="MVVMGymModel.Trainers">
         <MappingFragment StoreEntitySet="Trainers">
           <ScalarProperty Name="trainer_id" ColumnName="trainer_id" />
-          <ScalarProperty Name="firstName" ColumnName="firstName" />
-          <ScalarProperty Name="lastName" ColumnName="lastName" />
-          <ScalarProperty Name="hireDate" ColumnName="hireDate" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
           <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -163,7 +193,11 @@
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password_hash" ColumnName="password_hash" />
-          <ScalarProperty Name="roleId" ColumnName="roleId" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="email" ColumnName="email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -171,8 +205,21 @@
       <EntityTypeMapping TypeName="MVVMGymModel.Vendors">
         <MappingFragment StoreEntitySet="Vendors">
           <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
-          <ScalarProperty Name="firstName" ColumnName="firstName" />
-          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberInvoices">
+      <EntityTypeMapping TypeName="MVVMGymModel.MemberInvoices">
+        <MappingFragment StoreEntitySet="MemberInvoices">
+          <ScalarProperty Name="member_id" ColumnName="member_id" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="payment_status_id" ColumnName="payment_status_id" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="member_invoice_id" ColumnName="member_invoice_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

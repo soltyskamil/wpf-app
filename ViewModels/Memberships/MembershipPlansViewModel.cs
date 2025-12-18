@@ -12,7 +12,7 @@ namespace MVVMGym.ViewModels
 {
     public class MembershipPlansViewModel : WszystkieViewModel<MembershipPlans>
     {
-        private readonly GymEntities gymEntities;
+        private readonly MVVMGymEntities gymEntities;
 
         private BaseCommand _LoadCommand;
 

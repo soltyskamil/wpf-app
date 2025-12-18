@@ -18,12 +18,15 @@ namespace MVVMGym.Models
         public PaymentStatuses()
         {
             this.Invoices = new HashSet<Invoices>();
+            this.MemberInvoices = new HashSet<MemberInvoices>();
         }
     
-        public int paymentStatus_id { get; set; }
-        public string description { get; set; }
+        public int payment_status_id { get; set; }
+        public string code { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoices> Invoices { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MemberInvoices> MemberInvoices { get; set; }
     }
 }

@@ -6,19 +6,20 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace MVVMGym.ViewModels
 {
     public abstract class WszystkieViewModel<T> : WorkspaceViewModel
     {
-        protected readonly GymEntities gymEntities;
+        protected readonly MVVMGymEntities gymEntities;
 
         private BaseCommand _LoadCommand;
 
         public WszystkieViewModel()
         {
-            this.gymEntities = new GymEntities();
+            this.gymEntities = new MVVMGymEntities();
         }
 
         private ObservableCollection<T> _List;

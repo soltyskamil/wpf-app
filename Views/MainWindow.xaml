@@ -14,55 +14,10 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="MainWindowResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
-
-            <Style x:Key="NavTextStyle" TargetType="TextBlock">
-                <Setter Property="Foreground" Value="#fffffe" />
-
-                <Setter Property="VerticalAlignment" Value="Center" />
-            </Style>
-
-
-
-            <Style x:Key="NavButtonStyle" TargetType="Button">
-
-
-                <Setter Property="Margin" Value="2,6" />
-                <Setter Property="Padding" Value="10,6" />
-                <Setter Property="Background" Value="BlueViolet" />
-                <Setter Property="Foreground" Value="#fffffe" />
-                <Setter Property="Cursor" Value="Hand" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="Bd"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="Transparent"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="10"
-                                SnapsToDevicePixels="True">
-
-                                <ContentPresenter
-                                    Margin="{TemplateBinding Padding}"
-                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                    RecognizesAccessKey="True"
-                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-
-
-            </Style>
-
-
-
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="#16161a">
+    <Grid Background="{DynamicResource BgBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />

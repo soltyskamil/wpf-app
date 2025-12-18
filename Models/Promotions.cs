@@ -14,9 +14,20 @@ namespace MVVMGym.Models
     
     public partial class Promotions
     {
-        public int promo_id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Promotions()
+        {
+            this.Members = new HashSet<Members>();
+        }
+    
+        public int promotion_id { get; set; }
         public string code { get; set; }
         public string description { get; set; }
-        public decimal discountPercentageAmount { get; set; }
+        public decimal discount_percentage { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Members> Members { get; set; }
     }
 }

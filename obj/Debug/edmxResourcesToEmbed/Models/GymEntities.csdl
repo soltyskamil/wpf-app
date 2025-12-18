@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GymEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Branches">
+    <Key>
+      <PropertyRef Name="branch_id" />
+    </Key>
+    <Property Name="branch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_time" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="close_time" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Classes" Relationship="Self.FK_Classes_Branches" FromRole="Branches" ToRole="Classes" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Branches" FromRole="Branches" ToRole="Employees" />
+    <NavigationProperty Name="Equipment" Relationship="Self.FK_Equipment_Branches" FromRole="Branches" ToRole="Equipment" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_Branches" FromRole="Branches" ToRole="Invoices" />
+    <NavigationProperty Name="Rooms" Relationship="Self.FK_Rooms_Branches" FromRole="Branches" ToRole="Rooms" />
+    <NavigationProperty Name="Trainers" Relationship="Self.FK_Trainers_Branches" FromRole="Branches" ToRole="Trainers" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Branches" FromRole="Branches" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Classes">
+    <Key>
+      <PropertyRef Name="class_id" />
+    </Key>
+    <Property Name="class_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="duration_minutes" Type="Int32" Nullable="false" />
+    <Property Name="difficulty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="branch_id" Type="Int32" Nullable="false" />
+    <Property Name="trainer_id" Type="Int32" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="room_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Classes_Branches" FromRole="Classes" ToRole="Branches" />
+    <NavigationProperty Name="Rooms" Relationship="Self.FK_Classes_Rooms" FromRole="Classes" ToRole="Rooms" />
+    <NavigationProperty Name="Trainers" Relationship="Self.FK_Classes_Trainers" FromRole="Classes" ToRole="Trainers" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date_of_birth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="branch_id" Type="Int32" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Employees_Branches" FromRole="Employees" ToRole="Branches" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK_Employees_Roles" FromRole="Employees" ToRole="Roles" />
+    <NavigationProperty Name="Payrolls" Relationship="Self.FK_Payrolls_Employees" FromRole="Employees" ToRole="Payrolls" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="equipment_id" />
+    </Key>
+    <Property Name="equipment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="branch_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="serial_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="price" Type="Int32" Nullable="false" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="vendor_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Equipment_Branches" FromRole="Equipment" ToRole="Branches" />
+    <NavigationProperty Name="Vendors" Relationship="Self.FK_Equipment_Vendors" FromRole="Equipment" ToRole="Vendors" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="invoice_id" />
+    </Key>
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="vendor_id" Type="Int32" Nullable="false" />
+    <Property Name="branch_id" Type="Int32" Nullable="false" />
+    <Property Name="total_amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="payment_status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="member_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Invoices_Branches" FromRole="Invoices" ToRole="Branches" />
+    <NavigationProperty Name="Members" Relationship="Self.FK_Invoices_Members" FromRole="Invoices" ToRole="Members" />
+    <NavigationProperty Name="PaymentStatuses" Relationship="Self.FK_Invoices_PaymentStatuses" FromRole="Invoices" ToRole="PaymentStatuses" />
+    <NavigationProperty Name="Vendors" Relationship="Self.FK_Invoices_Vendors" FromRole="Invoices" ToRole="Vendors" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="member_id" />
+    </Key>
+    <Property Name="member_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="membership_plan_id" Type="Int32" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_Members" FromRole="Members" ToRole="Invoices" />
+    <NavigationProperty Name="MembershipPlans" Relationship="Self.FK_Members_MembershipPlans" FromRole="Members" ToRole="MembershipPlans" />
+  </EntityType>
+  <EntityType Name="MembershipPlans">
+    <Key>
+      <PropertyRef Name="membership_plan_id" />
+    </Key>
+    <Property Name="membership_plan_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="duration_months" Type="Int32" Nullable="false" />
+    <Property Name="total_price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="promotion_id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Members" Relationship="Self.FK_Members_MembershipPlans" FromRole="MembershipPlans" ToRole="Members" />
+    <NavigationProperty Name="Promotions" Relationship="Self.FK_MembershipPlans_Promotions" FromRole="MembershipPlans" ToRole="Promotions" />
+  </EntityType>
+  <EntityType Name="PaymentStatuses">
+    <Key>
+      <PropertyRef Name="payment_status_id" />
+    </Key>
+    <Property Name="payment_status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_PaymentStatuses" FromRole="PaymentStatuses" ToRole="Invoices" />
+  </EntityType>
+  <EntityType Name="Payrolls">
+    <Key>
+      <PropertyRef Name="payroll_id" />
+    </Key>
+    <Property Name="payroll_id" Type="Int32" Nullable="false" />
+    <Property Name="employee_id" Type="Int32" Nullable="false" />
+    <Property Name="start_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="end_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="gross" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="net" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="taxes" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="paid_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Payrolls_Employees" FromRole="Payrolls" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Promotions">
+    <Key>
+      <PropertyRef Name="promotion_id" />
+    </Key>
+    <Property Name="promotion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="discount_percentage" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="MembershipPlans" Relationship="Self.FK_MembershipPlans_Promotions" FromRole="Promotions" ToRole="MembershipPlans" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Roles" FromRole="Roles" ToRole="Employees" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="room_id" />
+    </Key>
+    <Property Name="room_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="branch_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="capacity" Type="Int32" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Rooms_Branches" FromRole="Rooms" ToRole="Branches" />
+    <NavigationProperty Name="Classes" Relationship="Self.FK_Classes_Rooms" FromRole="Rooms" ToRole="Classes" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Trainers">
+    <Key>
+      <PropertyRef Name="trainer_id" />
+    </Key>
+    <Property Name="trainer_id" Type="Int32" Nullable="false" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="branch_id" Type="Int32" Nullable="false" />
+    <Property Name="end_date" Type="DateTime" Precision="3" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Trainers_Branches" FromRole="Trainers" ToRole="Branches" />
+    <NavigationProperty Name="Classes" Relationship="Self.FK_Classes_Trainers" FromRole="Trainers" ToRole="Classes" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password_hash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="branch_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Users_Branches" FromRole="Users" ToRole="Branches" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Vendors">
+    <Key>
+      <PropertyRef Name="vendor_id" />
+    </Key>
+    <Property Name="vendor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Equipment" Relationship="Self.FK_Equipment_Vendors" FromRole="Vendors" ToRole="Equipment" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_Vendors" FromRole="Vendors" ToRole="Invoices" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Classes_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
+    <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Classes">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipment_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rooms_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Rooms">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trainers_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
+    <End Role="Trainers" Type="Self.Trainers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Trainers">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Classes_Rooms">
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+    <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="room_id" />
+      </Principal>
+      <Dependent Role="Classes">
+        <PropertyRef Name="room_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Classes_Trainers">
+    <End Role="Trainers" Type="Self.Trainers" Multiplicity="1" />
+    <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainers">
+        <PropertyRef Name="trainer_id" />
+      </Principal>
+      <Dependent Role="Classes">
+        <PropertyRef Name="trainer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payrolls_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Payrolls" Type="Self.Payrolls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Payrolls">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipment_Vendors">
+    <End Role="Vendors" Type="Self.Vendors" Multiplicity="1" />
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendors">
+        <PropertyRef Name="vendor_id" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="vendor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_Members">
+    <End Role="Members" Type="Self.Members" Multiplicity="1" />
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="member_id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="member_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_PaymentStatuses">
+    <End Role="PaymentStatuses" Type="Self.PaymentStatuses" Multiplicity="1" />
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentStatuses">
+        <PropertyRef Name="payment_status_id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="payment_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_Vendors">
+    <End Role="Vendors" Type="Self.Vendors" Multiplicity="1" />
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendors">
+        <PropertyRef Name="vendor_id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="vendor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_MembershipPlans">
+    <End Role="MembershipPlans" Type="Self.MembershipPlans" Multiplicity="0..1" />
+    <End Role="Members" Type="Self.Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MembershipPlans">
+        <PropertyRef Name="membership_plan_id" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="membership_plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MembershipPlans_Promotions">
+    <End Role="Promotions" Type="Self.Promotions" Multiplicity="1" />
+    <End Role="MembershipPlans" Type="Self.MembershipPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promotions">
+        <PropertyRef Name="promotion_id" />
+      </Principal>
+      <Dependent Role="MembershipPlans">
+        <PropertyRef Name="promotion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EntitiesGym" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Branches" EntityType="Self.Branches" />
+    <EntitySet Name="Classes" EntityType="Self.Classes" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" />
+    <EntitySet Name="Equipment" EntityType="Self.Equipment" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoices" />
+    <EntitySet Name="Members" EntityType="Self.Members" />
+    <EntitySet Name="MembershipPlans" EntityType="Self.MembershipPlans" />
+    <EntitySet Name="PaymentStatuses" EntityType="Self.PaymentStatuses" />
+    <EntitySet Name="Payrolls" EntityType="Self.Payrolls" />
+    <EntitySet Name="Promotions" EntityType="Self.Promotions" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Rooms" EntityType="Self.Rooms" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Trainers" EntityType="Self.Trainers" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Vendors" EntityType="Self.Vendors" />
+    <AssociationSet Name="FK_Classes_Branches" Association="Self.FK_Classes_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Classes" EntitySet="Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Branches" Association="Self.FK_Employees_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipment_Branches" Association="Self.FK_Equipment_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Branches" Association="Self.FK_Invoices_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rooms_Branches" Association="Self.FK_Rooms_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Rooms" EntitySet="Rooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trainers_Branches" Association="Self.FK_Trainers_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Trainers" EntitySet="Trainers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Branches" Association="Self.FK_Users_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Classes_Rooms" Association="Self.FK_Classes_Rooms">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="Classes" EntitySet="Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Classes_Trainers" Association="Self.FK_Classes_Trainers">
+      <End Role="Trainers" EntitySet="Trainers" />
+      <End Role="Classes" EntitySet="Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Roles" Association="Self.FK_Employees_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payrolls_Employees" Association="Self.FK_Payrolls_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Payrolls" EntitySet="Payrolls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipment_Vendors" Association="Self.FK_Equipment_Vendors">
+      <End Role="Vendors" EntitySet="Vendors" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Members" Association="Self.FK_Invoices_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_PaymentStatuses" Association="Self.FK_Invoices_PaymentStatuses">
+      <End Role="PaymentStatuses" EntitySet="PaymentStatuses" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Vendors" Association="Self.FK_Invoices_Vendors">
+      <End Role="Vendors" EntitySet="Vendors" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_MembershipPlans" Association="Self.FK_Members_MembershipPlans">
+      <End Role="MembershipPlans" EntitySet="MembershipPlans" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MembershipPlans_Promotions" Association="Self.FK_MembershipPlans_Promotions">
+      <End Role="Promotions" EntitySet="Promotions" />
+      <End Role="MembershipPlans" EntitySet="MembershipPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

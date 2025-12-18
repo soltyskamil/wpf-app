@@ -14,11 +14,22 @@ namespace MVVMGym.Models
     
     public partial class Rooms
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Rooms()
+        {
+            this.Classes = new HashSet<Classes>();
+        }
+    
         public int room_id { get; set; }
         public int branch_id { get; set; }
         public string name { get; set; }
         public int capacity { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
+        public string description { get; set; }
     
         public virtual Branches Branches { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Classes> Classes { get; set; }
     }
 }

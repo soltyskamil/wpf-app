@@ -15,7 +15,7 @@ namespace MVVMGym.ViewModels
     public class PromotionsViewModel : WszystkieViewModel<Promotions>
     {
 
-        private readonly GymEntities gymEntities;
+        private readonly MVVMGymEntities gymEntities;
 
         private BaseCommand _LoadCommand;
 

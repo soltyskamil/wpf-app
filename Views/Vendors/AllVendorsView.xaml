@@ -17,11 +17,11 @@
                     Header="ID" />
                 <DataGridTextColumn
                     x:Name="firstName"
-                    Binding="{Binding Path=firstName}"
+                    Binding="{Binding Path=first_name}"
                     Header="Name" />
                 <DataGridTextColumn
                     x:Name="lastName"
-                    Binding="{Binding Path=lastName}"
+                    Binding="{Binding Path=last_name}"
                     Header="Last name" />
 
 

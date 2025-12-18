@@ -4,35 +4,45 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ab866aa0825e4394a77d969f7fad860b" Name="Diagram1" ZoomLevel="96">
-        <EntityTypeShape EntityType="MVVMGymModel.Branches" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Classes" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Employees" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Equipment" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Invoices" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Members" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.MembershipPlans" Width="2.125" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.PaymentStatuses" Width="1.5" PointX="3.75" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Payrolls" Width="1.5" PointX="7.25" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Promotions" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Roles" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Rooms" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Trainers" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Users" Width="1.5" PointX="3" PointY="28" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVVMGymModel.Vendors" Width="1.5" PointX="3.75" PointY="25" IsExpanded="true" />
+      <Diagram DiagramId="949feb41be7c42fe828c4af52abbd79b" Name="Diagram1" ZoomLevel="105">
+        <EntityTypeShape EntityType="MVVMGymModel.Branches" Width="1.5" PointX="21.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Classes" Width="1.5" PointX="26.25" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Employees" Width="1.5" PointX="24" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Equipment" Width="1.5" PointX="27" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Invoices" Width="1.5" PointX="27.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Members" Width="2.125" PointX="24.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.MembershipPlans" Width="1.5" PointX="21.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.PaymentStatuses" Width="1.5" PointX="24.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Payrolls" Width="1.5" PointX="26.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Promotions" Width="1.5" PointX="22.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Roles" Width="1.5" PointX="21.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Rooms" Width="1.5" PointX="24" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.sysdiagrams" Width="1.5" PointX="26.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Trainers" Width="1.5" PointX="24" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Users" Width="1.5" PointX="24" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVVMGymModel.Vendors" Width="1.5" PointX="24.75" PointY="40" IsExpanded="true" />
         <AssociationConnector Association="MVVMGymModel.FK_Classes_Branches" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Employees_Branches" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Equipment_Branches" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Invoices_Branches" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Rooms_Branches" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Trainers_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="MVVMGymModel.FK_Users_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="MVVMGymModel.FK_Classes_Rooms" ManuallyRouted="false" />
+        <AssociationConnector Association="MVVMGymModel.FK_Classes_Trainers" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Employees_Roles" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Payrolls_Employees" ManuallyRouted="false" />
-        <AssociationConnector Association="MVVMGymModel.FK_Invoices_Members" ManuallyRouted="false" />
+        <AssociationConnector Association="MVVMGymModel.FK_Equipment_Vendors" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Invoices_PaymentStatuses" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Invoices_Vendors" ManuallyRouted="false" />
+        <AssociationConnector Association="MVVMGymModel.FK_Members_MembershipPlans" ManuallyRouted="false" />
         <AssociationConnector Association="MVVMGymModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="MVVMGymModel.FK_Members_Promotions" />
+        <AssociationConnector Association="MVVMGymModel.FK_Members_Branches" />
+        <EntityTypeShape EntityType="MVVMGymModel.MemberInvoices" Width="1.5" PointX="29.25" PointY="10" />
+        <AssociationConnector Association="MVVMGymModel.FK_MemberInvoices_Branches" />
+        <AssociationConnector Association="MVVMGymModel.FK_MemberInvoices_Members" />
+        <AssociationConnector Association="MVVMGymModel.FK_MemberInvoices_PaymentStatuses" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

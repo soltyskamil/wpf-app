@@ -17,8 +17,13 @@ namespace MVVMGym.Models
         public int user_id { get; set; }
         public string username { get; set; }
         public string password_hash { get; set; }
-        public int roleId { get; set; }
+        public int role_id { get; set; }
+        public Nullable<int> branch_id { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
+        public string email { get; set; }
     
+        public virtual Branches Branches { get; set; }
         public virtual Roles Roles { get; set; }
     }
 }

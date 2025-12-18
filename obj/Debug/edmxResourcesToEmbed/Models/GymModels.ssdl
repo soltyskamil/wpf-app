@@ -8,8 +8,10 @@
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="openTime" Type="time" Precision="0" Nullable="false" />
-    <Property Name="closeTime" Type="time" Precision="0" Nullable="false" />
+    <Property Name="open_time" Type="time" Precision="0" Nullable="false" />
+    <Property Name="close_time" Type="time" Precision="0" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Classes">
     <Key>
@@ -17,22 +19,28 @@
     </Key>
     <Property Name="class_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="durationMinutes" Type="int" Nullable="false" />
+    <Property Name="duration_minutes" Type="int" Nullable="false" />
     <Property Name="difficulty" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="branch_id" Type="int" Nullable="false" />
+    <Property Name="trainer_id" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+    <Property Name="room_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Employees">
     <Key>
       <PropertyRef Name="employee_id" />
     </Key>
     <Property Name="employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="sex" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="dob" Type="datetime" Nullable="false" />
-    <Property Name="roleId" Type="int" Nullable="false" />
+    <Property Name="date_of_birth" Type="datetime" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
     <Property Name="branch_id" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Equipment">
     <Key>
@@ -42,47 +50,69 @@
     <Property Name="branch_id" Type="int" Nullable="false" />
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="model" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="serialNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="purchaseDate" Type="datetime" Nullable="false" />
+    <Property Name="serial_number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+    <Property Name="vendor_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Invoices">
     <Key>
       <PropertyRef Name="invoice_id" />
     </Key>
     <Property Name="invoice_id" Type="int" Nullable="false" />
-    <Property Name="vendor_id" Type="int" />
-    <Property Name="member_id" Type="int" />
+    <Property Name="vendor_id" Type="int" Nullable="false" />
     <Property Name="branch_id" Type="int" Nullable="false" />
-    <Property Name="amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="paymentStatus_id" Type="int" Nullable="false" />
+    <Property Name="total_amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="payment_status_id" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MemberInvoices">
+    <Key>
+      <PropertyRef Name="member_invoice_id" />
+    </Key>
+    <Property Name="member_invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="branch_id" Type="int" Nullable="false" />
+    <Property Name="total_amount" Type="int" Nullable="false" />
+    <Property Name="payment_status_id" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+    <Property Name="member_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Members">
     <Key>
       <PropertyRef Name="member_id" />
     </Key>
     <Property Name="member_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="join_date" Type="datetime" Nullable="false" />
-    <Property Name="end_date" Type="datetime" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+    <Property Name="membership_plan_id" Type="int" Nullable="false" />
+    <Property Name="promotion_id" Type="int" />
+    <Property Name="branch_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="MembershipPlans">
     <Key>
-      <PropertyRef Name="plan_id" />
+      <PropertyRef Name="membership_plan_id" />
     </Key>
-    <Property Name="plan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="durationMonths" Type="int" Nullable="false" />
-    <Property Name="price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="membership_plan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="duration_months" Type="int" Nullable="false" />
+    <Property Name="total_price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="PaymentStatuses">
     <Key>
-      <PropertyRef Name="paymentStatus_id" />
+      <PropertyRef Name="payment_status_id" />
     </Key>
-    <Property Name="paymentStatus_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="payment_status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Payrolls">
     <Key>
@@ -90,28 +120,34 @@
     </Key>
     <Property Name="payroll_id" Type="int" Nullable="false" />
     <Property Name="employee_id" Type="int" Nullable="false" />
-    <Property Name="period_start" Type="datetime" Nullable="false" />
-    <Property Name="period_end" Type="datetime" Nullable="false" />
+    <Property Name="start_date" Type="datetime" Nullable="false" />
+    <Property Name="end_date" Type="datetime" Nullable="false" />
     <Property Name="gross" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="net" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="taxes" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="paid_at" Type="datetime" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Promotions">
     <Key>
-      <PropertyRef Name="promo_id" />
+      <PropertyRef Name="promotion_id" />
     </Key>
-    <Property Name="promo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="promotion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="discountPercentageAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="discount_percentage" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
-      <PropertyRef Name="roleId" />
+      <PropertyRef Name="role_id" />
     </Key>
-    <Property Name="roleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="roleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Rooms">
     <Key>
@@ -121,6 +157,9 @@
     <Property Name="branch_id" Type="int" Nullable="false" />
     <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="capacity" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -136,11 +175,14 @@
     <Key>
       <PropertyRef Name="trainer_id" />
     </Key>
-    <Property Name="trainer_id" Type="int" Nullable="false" />
-    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="hireDate" Type="datetime" Nullable="false" />
+    <Property Name="trainer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="start_date" Type="datetime" Nullable="false" />
     <Property Name="branch_id" Type="int" Nullable="false" />
+    <Property Name="end_date" Type="datetime" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -149,15 +191,19 @@
     <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="password_hash" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="roleId" Type="int" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="branch_id" Type="int" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Vendors">
     <Key>
       <PropertyRef Name="vendor_id" />
     </Key>
     <Property Name="vendor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="firstName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="lastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_Classes_Branches">
     <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
@@ -168,6 +214,30 @@
       </Principal>
       <Dependent Role="Classes">
         <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Classes_Rooms">
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+    <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="room_id" />
+      </Principal>
+      <Dependent Role="Classes">
+        <PropertyRef Name="room_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Classes_Trainers">
+    <End Role="Trainers" Type="Self.Trainers" Multiplicity="1" />
+    <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainers">
+        <PropertyRef Name="trainer_id" />
+      </Principal>
+      <Dependent Role="Classes">
+        <PropertyRef Name="trainer_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -188,10 +258,10 @@
     <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Roles">
-        <PropertyRef Name="roleId" />
+        <PropertyRef Name="role_id" />
       </Principal>
       <Dependent Role="Employees">
-        <PropertyRef Name="roleId" />
+        <PropertyRef Name="role_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -207,6 +277,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Equipment_Vendors">
+    <End Role="Vendors" Type="Self.Vendors" Multiplicity="1" />
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendors">
+        <PropertyRef Name="vendor_id" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="vendor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Invoices_Branches">
     <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
     <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
@@ -219,32 +301,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Invoices_Members">
-    <End Role="Members" Type="Self.Members" Multiplicity="0..1" />
-    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Members">
-        <PropertyRef Name="member_id" />
-      </Principal>
-      <Dependent Role="Invoices">
-        <PropertyRef Name="member_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Invoices_PaymentStatuses">
     <End Role="PaymentStatuses" Type="Self.PaymentStatuses" Multiplicity="1" />
     <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PaymentStatuses">
-        <PropertyRef Name="paymentStatus_id" />
+        <PropertyRef Name="payment_status_id" />
       </Principal>
       <Dependent Role="Invoices">
-        <PropertyRef Name="paymentStatus_id" />
+        <PropertyRef Name="payment_status_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Invoices_Vendors">
-    <End Role="Vendors" Type="Self.Vendors" Multiplicity="0..1" />
+    <End Role="Vendors" Type="Self.Vendors" Multiplicity="1" />
     <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Vendors">
@@ -252,6 +322,78 @@
       </Principal>
       <Dependent Role="Invoices">
         <PropertyRef Name="vendor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Promotions">
+    <End Role="Promotions" Type="Self.Promotions" Multiplicity="0..1" />
+    <End Role="Members" Type="Self.Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promotions">
+        <PropertyRef Name="promotion_id" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="promotion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberInvoices_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
+    <End Role="MemberInvoices" Type="Self.MemberInvoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="MemberInvoices">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberInvoices_Members">
+    <End Role="Members" Type="Self.Members" Multiplicity="1" />
+    <End Role="MemberInvoices" Type="Self.MemberInvoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="member_id" />
+      </Principal>
+      <Dependent Role="MemberInvoices">
+        <PropertyRef Name="member_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MemberInvoices_PaymentStatuses">
+    <End Role="PaymentStatuses" Type="Self.PaymentStatuses" Multiplicity="1" />
+    <End Role="MemberInvoices" Type="Self.MemberInvoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentStatuses">
+        <PropertyRef Name="payment_status_id" />
+      </Principal>
+      <Dependent Role="MemberInvoices">
+        <PropertyRef Name="payment_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="1" />
+    <End Role="Members" Type="Self.Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_MembershipPlans">
+    <End Role="MembershipPlans" Type="Self.MembershipPlans" Multiplicity="1" />
+    <End Role="Members" Type="Self.Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MembershipPlans">
+        <PropertyRef Name="membership_plan_id" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="membership_plan_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -291,15 +433,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Users_Branches">
+    <End Role="Branches" Type="Self.Branches" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="branch_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="branch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Roles">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Roles">
-        <PropertyRef Name="roleId" />
+        <PropertyRef Name="role_id" />
       </Principal>
       <Dependent Role="Users">
-        <PropertyRef Name="roleId" />
+        <PropertyRef Name="role_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -309,6 +463,7 @@
     <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberInvoices" EntityType="Self.MemberInvoices" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MembershipPlans" EntityType="Self.MembershipPlans" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentStatuses" EntityType="Self.PaymentStatuses" Schema="dbo" store:Type="Tables" />
@@ -324,6 +479,14 @@
       <End Role="Branches" EntitySet="Branches" />
       <End Role="Classes" EntitySet="Classes" />
     </AssociationSet>
+    <AssociationSet Name="FK_Classes_Rooms" Association="Self.FK_Classes_Rooms">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="Classes" EntitySet="Classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Classes_Trainers" Association="Self.FK_Classes_Trainers">
+      <End Role="Trainers" EntitySet="Trainers" />
+      <End Role="Classes" EntitySet="Classes" />
+    </AssociationSet>
     <AssociationSet Name="FK_Employees_Branches" Association="Self.FK_Employees_Branches">
       <End Role="Branches" EntitySet="Branches" />
       <End Role="Employees" EntitySet="Employees" />
@@ -336,12 +499,12 @@
       <End Role="Branches" EntitySet="Branches" />
       <End Role="Equipment" EntitySet="Equipment" />
     </AssociationSet>
+    <AssociationSet Name="FK_Equipment_Vendors" Association="Self.FK_Equipment_Vendors">
+      <End Role="Vendors" EntitySet="Vendors" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
     <AssociationSet Name="FK_Invoices_Branches" Association="Self.FK_Invoices_Branches">
       <End Role="Branches" EntitySet="Branches" />
-      <End Role="Invoices" EntitySet="Invoices" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Invoices_Members" Association="Self.FK_Invoices_Members">
-      <End Role="Members" EntitySet="Members" />
       <End Role="Invoices" EntitySet="Invoices" />
     </AssociationSet>
     <AssociationSet Name="FK_Invoices_PaymentStatuses" Association="Self.FK_Invoices_PaymentStatuses">
@@ -351,6 +514,30 @@
     <AssociationSet Name="FK_Invoices_Vendors" Association="Self.FK_Invoices_Vendors">
       <End Role="Vendors" EntitySet="Vendors" />
       <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Promotions" Association="Self.FK_Member_Promotions">
+      <End Role="Promotions" EntitySet="Promotions" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberInvoices_Branches" Association="Self.FK_MemberInvoices_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="MemberInvoices" EntitySet="MemberInvoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberInvoices_Members" Association="Self.FK_MemberInvoices_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="MemberInvoices" EntitySet="MemberInvoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MemberInvoices_PaymentStatuses" Association="Self.FK_MemberInvoices_PaymentStatuses">
+      <End Role="PaymentStatuses" EntitySet="PaymentStatuses" />
+      <End Role="MemberInvoices" EntitySet="MemberInvoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_Branches" Association="Self.FK_Members_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_MembershipPlans" Association="Self.FK_Members_MembershipPlans">
+      <End Role="MembershipPlans" EntitySet="MembershipPlans" />
+      <End Role="Members" EntitySet="Members" />
     </AssociationSet>
     <AssociationSet Name="FK_Payrolls_Employees" Association="Self.FK_Payrolls_Employees">
       <End Role="Employees" EntitySet="Employees" />
@@ -363,6 +550,10 @@
     <AssociationSet Name="FK_Trainers_Branches" Association="Self.FK_Trainers_Branches">
       <End Role="Branches" EntitySet="Branches" />
       <End Role="Trainers" EntitySet="Trainers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Branches" Association="Self.FK_Users_Branches">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Users" EntitySet="Users" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
       <End Role="Roles" EntitySet="Roles" />

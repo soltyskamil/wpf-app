@@ -37,12 +37,20 @@
                     Header="Numer tel" />
                 <DataGridTextColumn
                     x:Name="openTime"
-                    Binding="{Binding Path=openTime}"
+                    Binding="{Binding Path=open_time}"
                     Header="Czas otwarcia" />
                 <DataGridTextColumn
                     x:Name="closeTime"
-                    Binding="{Binding Path=closeTime}"
+                    Binding="{Binding Path=close_time}"
                     Header="closeTime" />
+                <DataGridTextColumn
+                    x:Name="updatedAt"
+                    Binding="{Binding Path=updated_at}"
+                    Header="Zmodyfikowano" />
+                <DataGridTextColumn
+                    x:Name="createdAt"
+                    Binding="{Binding Path=created_at}"
+                    Header="Zaktualizowano" />
             </DataGrid.Columns>
         </DataGrid>
 

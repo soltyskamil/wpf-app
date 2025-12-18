@@ -1,9 +1,13 @@
 ﻿
 
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Themes\Generic.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Branches\BranchSummaryView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Classes\AllClassesView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Classes\NewClassView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Employees\AllEmployeesView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Employees\EmployeeSummaryView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Equipment\AllEquipmentView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Equipment\NewEquipmentView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Vendors\AllVendorsView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Branches\BranchesView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\MainWindow.xaml;;
@@ -13,4 +17,5 @@ FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Branches\NewBranchView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Employees\NewEmployeeView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Vendors\NewVendorView.xaml;;
 FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Promotions\PromotionsView.xaml;;
+FC:\Users\kamil\Desktop\MVVMGym2\MVVMGym\Views\Vendors\VendorSummaryView.xaml;;
 

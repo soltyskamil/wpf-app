@@ -254,9 +254,79 @@
     </ApplicationDefinition>
     <Compile Include="helpers\BaseCommand.cs" />
     <Compile Include="helpers\TimeSpanConverter.cs" />
+    <Compile Include="Models\Branches.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Classes.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employees.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Equipment.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GymModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GymModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GymModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GymModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GymModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoices.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MemberInvoices.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Members.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MembershipPlans.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentStatuses.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payrolls.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Promotions.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roles.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rooms.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trainers.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vendors.cs">
+      <DependentUpon>GymModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Branches\BranchSummaryViewModel.cs" />
     <Compile Include="ViewModels\Classes\AddNewClassViewModel.cs" />
     <Compile Include="ViewModels\Classes\AllClassesViewModel.cs" />
     <Compile Include="ViewModels\Employees\AddEmployeeViewModel.cs" />
+    <Compile Include="ViewModels\Employees\EmployeesSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Equipment\AddEquipmentViewModel.cs" />
+    <Compile Include="ViewModels\Equipment\EquipmentViewModel.cs" />
     <Compile Include="ViewModels\Vendors\AddVendorViewModel.cs" />
     <Compile Include="ViewModels\Vendors\AllVendorsViewModel.cs" />
     <Compile Include="ViewModels\Branches\BranchesViewModel.cs" />
@@ -268,8 +338,12 @@
     <Compile Include="ViewModels\Memberships\MembershipPlansViewModel.cs" />
     <Compile Include="ViewModels\Branches\NewBranchViewModel.cs" />
     <Compile Include="ViewModels\Promotions\PromotionsViewModel.cs" />
+    <Compile Include="ViewModels\Vendors\VendorsSummaryViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModel.cs" />
+    <Compile Include="Views\Branches\BranchSummaryView.xaml.cs">
+      <DependentUpon>BranchSummaryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Classes\AllClassesView.xaml.cs">
       <DependentUpon>AllClassesView.xaml</DependentUpon>
     </Compile>
@@ -278,6 +352,15 @@
     </Compile>
     <Compile Include="Views\Employees\AllEmployeesView.xaml.cs">
       <DependentUpon>AllEmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employees\EmployeeSummaryView.xaml.cs">
+      <DependentUpon>EmployeeSummaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Equipment\AllEquipmentView.xaml.cs">
+      <DependentUpon>AllEquipmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Equipment\NewEquipmentView.xaml.cs">
+      <DependentUpon>NewEquipmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Vendors\AllVendorsView.xaml.cs">
       <DependentUpon>AllVendorsView.xaml</DependentUpon>
@@ -302,7 +385,26 @@
     <Compile Include="Views\Promotions\PromotionsView.xaml.cs">
       <DependentUpon>PromotionsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Vendors\VendorSummaryView.xaml.cs">
+      <DependentUpon>VendorSummaryView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Themes\Colors.dark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Colors.light.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branches\BranchSummaryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -315,6 +417,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Employees\AllEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Employees\EmployeeSummaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Equipment\AllEquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Equipment\NewEquipmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -366,71 +480,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Vendors\VendorSummaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Branches.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Classes.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Employees.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Equipment.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GymModels.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GymModels.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GymModels.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GymModels.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GymModels.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Invoices.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Members.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MembershipPlans.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PaymentStatuses.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Payrolls.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Promotions.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Roles.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Rooms.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Trainers.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Users.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Vendors.cs">
-      <DependentUpon>GymModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

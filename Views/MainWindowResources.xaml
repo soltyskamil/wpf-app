@@ -11,8 +11,20 @@
     <DataTemplate DataType="{x:Type vm:AddEmployeeViewModel}">
         <vw:NewEmployeeView />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EmployeesSummaryViewModel}">
+        <vw:EmployeeSummaryView />
+    </DataTemplate>
 
     <!--  //Employees  -->
+
+    <!--  Equipment  -->
+    <DataTemplate DataType="{x:Type vm:EquipmentViewModel}">
+        <vw:AllEquipmentView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AddEquipmentViewModel}">
+        <vw:NewEquipmentView />
+    </DataTemplate>
+    <!--  Equipment  -->
 
     <!--  Promotions  -->
     <DataTemplate DataType="{x:Type vm:PromotionsViewModel}">
@@ -33,6 +45,9 @@
     <DataTemplate DataType="{x:Type vm:NewBranchViewModel}">
         <vw:NewBranchView />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:BranchSummaryViewModel}">
+        <vw:BranchSummaryView />
+    </DataTemplate>
     <!--  //Branches  -->
 
     <!--  //Vendors  -->
@@ -41,6 +56,9 @@
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AllVendorsViewModel}">
         <vw:AllVendorsView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:VendorsSummaryViewModel}">
+        <vw:VendorSummaryView />
     </DataTemplate>
     <!--  //Vendors  -->
 
@@ -52,54 +70,15 @@
         <vw:NewClassView />
     </DataTemplate>
 
-    <!--  Classes  -->
-    <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
-        <Setter Property="IsTabStop" Value="False" />
-
-        <Setter Property="Template">
-            <Setter.Value>
-                <!--
-                    This template ensures that content of a HeaderedContentControl
-                    fills the available vertical space.
-                -->
-                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
-                    <DockPanel>
-                        <ContentPresenter
-                            ContentSource="Header"
-                            ContentTemplate="{TemplateBinding HeaderTemplate}"
-                            DockPanel.Dock="Top" />
-                        <ContentPresenter ContentSource="Content" ContentTemplate="{TemplateBinding ContentTemplate}" />
-                    </DockPanel>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <!--
-        This style ensures that the borders in the main window are consistent.
-    -->
-    <Style x:Key="MainBorderStyle" TargetType="{x:Type Border}">
-        <Setter Property="Background" Value="WhiteSmoke" />
-        <Setter Property="BorderBrush" Value="LightGray" />
-
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CornerRadius" Value="5" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-    </Style>
-
-    <!--
-        This template explains how to render the list of commands on the left
-        side in the main window (the 'Control Panel' area).
-    -->
-
-
-    <!--
-        This template explains how to render
-        a tab item with a close button.
-    -->
     <DataTemplate x:Key="ClosableTabItemTemplate">
-        <DockPanel Width="120">
-            <Button
+
+
+        <Border Style="{DynamicResource ContentPresenterBorderStyle}">
+            <DockPanel
+                Width="150"
+                Background="red"
+                ClipToBounds="True">
+                <!--<Button
                 Width="16"
                 Height="16"
                 Margin="0,1,0,0"
@@ -112,9 +91,12 @@
                 Focusable="False"
                 FontFamily="Courier"
                 FontSize="9"
-                FontWeight="Bold" />
-            <ContentPresenter VerticalAlignment="Center" Content="{Binding Path=DisplayName}" />
-        </DockPanel>
+                FontWeight="Bold" />-->
+
+                <ContentPresenter Content="{Binding Path=DisplayName}" Style="{DynamicResource ContentPresenterStyle}" />
+            </DockPanel>
+        </Border>
+
     </DataTemplate>
 
     <!--
@@ -122,8 +104,6 @@
     -->
     <DataTemplate x:Key="WorkspacesTemplate">
         <TabControl
-            Background="#16161a"
-            BorderBrush="Transparent"
             IsSynchronizedWithCurrentItem="True"
             ItemTemplate="{StaticResource ClosableTabItemTemplate}"
             ItemsSource="{Binding}" />

@@ -17,18 +17,24 @@ namespace MVVMGym.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Members()
         {
-            this.Invoices = new HashSet<Invoices>();
+            this.MemberInvoices = new HashSet<MemberInvoices>();
         }
     
         public int member_id { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
-        public System.DateTime join_date { get; set; }
-        public Nullable<System.DateTime> end_date { get; set; }
+        public System.DateTime created_at { get; set; }
+        public System.DateTime updated_at { get; set; }
+        public int membership_plan_id { get; set; }
+        public Nullable<int> promotion_id { get; set; }
+        public int branch_id { get; set; }
     
+        public virtual MembershipPlans MembershipPlans { get; set; }
+        public virtual Promotions Promotions { get; set; }
+        public virtual Branches Branches { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Invoices> Invoices { get; set; }
+        public virtual ICollection<MemberInvoices> MemberInvoices { get; set; }
     }
 }
