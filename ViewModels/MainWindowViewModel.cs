@@ -31,21 +31,37 @@ namespace MVVMGym.ViewModels
         private List<CommandViewModel> CreateCommands()
         {
             return new List<CommandViewModel> {
-                new CommandViewModel("Employees","AccountGroup" ,new BaseCommand(() => this.ShowAllEmployees())),
-                new CommandViewModel("Add employee","AccountGroup" ,new BaseCommand(() => this.ShowAddNewEmployee())),
-                new CommandViewModel("Employees summary", "SourceBranch", new BaseCommand(() => this.ShowEmployeesSummary())),
-                new CommandViewModel("Equipment","AccountGroup" ,new BaseCommand(() => this.ShowAllEquipment())),
-                new CommandViewModel("New Equipment","AccountGroup" ,new BaseCommand(() => this.ShowAddEquipment())),
-                new CommandViewModel("Classes","AccountGroup" ,new BaseCommand(() => this.ShowAllClasses())),
-                new CommandViewModel("Add new class","AccountGroup" ,new BaseCommand(() => this.ShowAddClass())),
+                //employees
+                new CommandViewModel("All employees","AccountGroup" ,new BaseCommand(() => this.ShowAllEmployees())),
+                new CommandViewModel("Add employee","AccountPlus" ,new BaseCommand(() => this.ShowAddNewEmployee())),
+                new CommandViewModel("Employees summary", "TableAccount", new BaseCommand(() => this.ShowEmployeesSummary())),
+                
+                
+                //eq
+                new CommandViewModel("Equipment","Dumbbell" ,new BaseCommand(() => this.ShowAllEquipment())),
+                new CommandViewModel("Add Equipment","Plus" ,new BaseCommand(() => this.ShowAddEquipment())),
+                
+                
+                //class
+                new CommandViewModel("All Classes","GoogleClassroom" ,new BaseCommand(() => this.ShowAllClasses())),
+                new CommandViewModel("Add new class","Plus" ,new BaseCommand(() => this.ShowAddClass())),
+                
+                
+                //promo
                 new CommandViewModel("Promotions", "PercentCircle",new BaseCommand(() => this.ShowAllPromotions())),
+                
+                //memb
                 new CommandViewModel("Membership plans","WeightLifter", new BaseCommand(() => this.ShowAllMembershipPlans())),
+                
+                //branches
                 new CommandViewModel("Branches", "SourceBranch", new BaseCommand(() => this.ShowAllBranches())),
-                new CommandViewModel("Branches summary", "SourceBranch", new BaseCommand(() => this.ShowBranchSummary())),
-                new CommandViewModel("NewBranch", "SourceBranchPlus", new BaseCommand(() => this.ShowNewBranch())),
+                new CommandViewModel("Branches summary", "Database", new BaseCommand(() => this.ShowBranchSummary())),
+                new CommandViewModel("Add branch", "SourceBranchPlus", new BaseCommand(() => this.ShowNewBranch())),
+                
+                //vendors
                 new CommandViewModel("All vendors", "SourceBranchPlus", new BaseCommand(() => this.ShowAllVendors())),
-                new CommandViewModel("Vendors summary", "SourceBranchPlus", new BaseCommand(() => this.ShowVendorsSummary())),
-                new CommandViewModel("New vendor", "AccountGroup", new BaseCommand(() => this.ShowAddVendor())),
+                new CommandViewModel("Vendors summary", "Database", new BaseCommand(() => this.ShowVendorsSummary())),
+                new CommandViewModel("Add vendor", "Plus", new BaseCommand(() => this.ShowAddVendor())),
             };
         }
 

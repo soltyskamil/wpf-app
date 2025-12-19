@@ -12,8 +12,8 @@ namespace MVVMGym.ViewModels
     {
         public string name { get; set; }
 
-        public int count { get; set; }
-        public int totalValue { get; set; }
+        public int? count { get; set; }
+        public int? totalValue { get; set; }
         public double? average { get; set; }
     }
 
@@ -52,7 +52,6 @@ namespace MVVMGym.ViewModels
         {
             VendorsOverview = new ObservableCollection<VendorSummaryRow>(
                 base.gymEntities.Vendors
-                .AsNoTracking()
                 .Select(v => new VendorSummaryRow
                 {
                     ID = v.vendor_id,

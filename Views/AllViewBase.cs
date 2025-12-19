@@ -7,6 +7,7 @@ namespace MVVMGym.Views
     {
         static AllViewBase()
         {
+
             DefaultStyleKeyProperty.OverrideMetadata(typeof(AllViewBase), new FrameworkPropertyMetadata(typeof(AllViewBase)));
         }
     }

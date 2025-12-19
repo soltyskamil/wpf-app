@@ -15,7 +15,7 @@ namespace MVVMGym.ViewModels
 
         public AddEquipmentViewModel() : base()
         {
-            base.DisplayName = "New equipment";
+            base.DisplayName = "Add equipment";
             item = new Equipment();
             item.created_at = DateTime.Now;
             item.updated_at = DateTime.Now;

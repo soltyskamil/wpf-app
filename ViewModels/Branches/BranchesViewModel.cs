@@ -31,7 +31,7 @@ namespace MVVMGym.ViewModels
         public BranchesViewModel() : base()
         {
 
-            base.DisplayName = "Wszystkie siłownie";
+            base.DisplayName = "Branches";
         }
 
         public override void load()

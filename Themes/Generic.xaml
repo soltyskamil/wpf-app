@@ -8,19 +8,59 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:FormViewBase}">
                     <Grid>
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <ToolBar Grid.Row="0" Style="{DynamicResource Toolbar}">
-                            <ToggleButton Command="{Binding SaveAndCloseCommand}" Content="Zapisz i zamknij" />
-                            <ToggleButton Content="Anuluj" />
-                        </ToolBar>
+                        <Grid Margin="-4" Background="{DynamicResource TextPrimaryBrush}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="10"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Background="{DynamicResource TextPrimaryBrush}"
+                                Orientation="Horizontal">
+                                <Button
+                                    Background="{DynamicResource SuccessBrush}"
+                                    BorderBrush="DarkGreen"
+                                    BorderThickness="2"
+                                    Command="{Binding SaveAndCloseCommand}"
+                                    Content="Zapisz i zamknij"
+                                    Style="{DynamicResource ButtonBase}" />
+                                <Button
+                                    Margin="6,0,0,0"
+                                    Background="{DynamicResource DangerBrush}"
+                                    BorderBrush="DarkRed"
+                                    BorderThickness="2"
+                                    Content="Anuluj"
+                                    Style="{DynamicResource ButtonBase}" />
+                            </StackPanel>
+
+                        </Grid>
                         <ContentPresenter Grid.Row="1" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="{x:Type local:AllViewBase}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:AllViewBase}">
+                    <Border Background="{DynamicResource TextPrimaryBrush}">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 </ResourceDictionary>

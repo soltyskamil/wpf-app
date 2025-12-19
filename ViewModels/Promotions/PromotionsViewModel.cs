@@ -48,7 +48,7 @@ namespace MVVMGym.ViewModels
 
         public PromotionsViewModel() : base()
         {
-            base.DisplayName = "Wszystkie promocje";
+            base.DisplayName = "Promotions";
         }
 
 

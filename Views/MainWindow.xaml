@@ -17,7 +17,7 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="{DynamicResource BgBrush}">
+    <Grid Background="{DynamicResource TextPrimaryBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
@@ -28,7 +28,10 @@
 
 
 
-        <Border Grid.Row="0" Grid.Column="0">
+        <ScrollViewer
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalScrollBarVisibility="Hidden">
             <ItemsControl ItemsSource="{Binding Path=Commands}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -51,6 +54,7 @@
                                     Height="24"
                                     Margin="0,0,10,0"
                                     HorizontalContentAlignment="Stretch"
+                                    Foreground="White"
                                     Kind="{Binding Path=Icon}" />
 
                                 <TextBlock
@@ -64,12 +68,17 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
 
-        </Border>
+        </ScrollViewer>
         <Border
             Grid.Row="0"
             Grid.Column="1"
-            BorderBrush="Transparent">
+            Margin="0"
+            BorderBrush="{DynamicResource TextPrimaryBrush}"
+            BorderThickness="0">
+
             <ContentPresenter Content="{Binding Path=Workspaces}" ContentTemplate="{StaticResource WorkspacesTemplate}" />
+
+
         </Border>
 
     </Grid>

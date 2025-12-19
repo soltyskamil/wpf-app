@@ -7,7 +7,7 @@ namespace MVVMGym.ViewModels
     {
         public AddVendorViewModel() : base()
         {
-            base.DisplayName = "New vendor";
+            base.DisplayName = "Add vendor";
             item = new Vendors();
         }
 

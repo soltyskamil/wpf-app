@@ -8,7 +8,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid Background="White">
+    <Grid Margin="-4" Background="{DynamicResource TextPrimaryBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="200" />
@@ -26,31 +26,29 @@
         <Label
             Grid.Row="0"
             Grid.Column="0"
-            Margin="0,8,0,8"
-            Content="First name" />
+            Content="First name"
+            Style="{DynamicResource FormLabelStyle}" />
         <TextBox
             Grid.Row="0"
             Grid.Column="1"
-            Margin="0,8,0,8"
             Text="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label
             Grid.Row="1"
             Grid.Column="0"
-            Margin="0,8,0,8"
-            Content="Last Name" />
+            Content="Last Name"
+            Style="{DynamicResource FormLabelStyle}" />
 
         <TextBox
             Grid.Row="1"
             Grid.Column="1"
-            Margin="0,8,0,8"
             Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label
             Grid.Row="2"
             Grid.Column="0"
-            Margin="0,8,0,8"
-            Content="Dob" />
+            Content="Dob"
+            Style="{DynamicResource FormLabelStyle}" />
         <DatePicker
             Grid.Row="2"
             Grid.Column="1"
@@ -59,8 +57,8 @@
         <Label
             Grid.Row="3"
             Grid.Column="0"
-            Margin="0,8,0,8"
-            Content="Rola" />
+            Content="Rola"
+            Style="{DynamicResource FormLabelStyle}" />
 
         <ComboBox
             Grid.Row="3"
@@ -73,8 +71,8 @@
         <Label
             Grid.Row="4"
             Grid.Column="0"
-            Margin="0,8,0,8"
-            Content="Siłownia" />
+            Content="Siłownia"
+            Style="{DynamicResource FormLabelStyle}" />
         <ComboBox
             Grid.Row="4"
             Grid.Column="1"
@@ -86,8 +84,8 @@
         <Label
             Grid.Row="5"
             Grid.Column="0"
-            Margin="0,8,0,8"
-            Content="Płeć" />
+            Content="Płeć"
+            Style="{DynamicResource FormLabelStyle}" />
         <ComboBox
             Grid.Row="5"
             Grid.Column="1"

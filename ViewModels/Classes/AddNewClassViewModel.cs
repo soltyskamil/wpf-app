@@ -17,7 +17,7 @@ namespace MVVMGym.ViewModels
         public IReadOnlyList<Trainers> Trainers { get; set; }
 
         public AddNewClassViewModel():base() {
-            base.DisplayName = "New class";
+            base.DisplayName = "Add class";
             item = new Classes();
             item.created_at = DateTime.Now;
             item.updated_at = DateTime.Now;

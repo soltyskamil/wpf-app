@@ -18,7 +18,7 @@ namespace MVVMGym.Views
     /// <summary>
     /// Logika interakcji dla klasy AllEmployeesView.xaml
     /// </summary>
-    public partial class AllEmployeesView : UserControl
+    public partial class AllEmployeesView : AllViewBase
     {
         public AllEmployeesView()
         {

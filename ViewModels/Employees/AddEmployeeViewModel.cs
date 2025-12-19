@@ -15,7 +15,7 @@ namespace MVVMGym.ViewModels
 
         public AddEmployeeViewModel() : base()
         {
-            base.DisplayName = "New employee";
+            base.DisplayName = "Add employee";
             item = new Employees();
             item.date_of_birth = DateTime.Today;
             item.created_at = DateTime.Today;

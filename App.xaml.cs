@@ -21,6 +21,7 @@ namespace MVVMGym
             var viewModel = new MainWindowViewModel();
             window.DataContext = viewModel;
             window.Show();
+            
         }
 
 

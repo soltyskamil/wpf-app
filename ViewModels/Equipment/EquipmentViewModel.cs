@@ -48,7 +48,7 @@ namespace MVVMGym.ViewModels
 
         public EquipmentViewModel():base()
         {
-            base.DisplayName = "Całe wyposażenie";
+            base.DisplayName = "Equipment";
         }
 
         public override void load()

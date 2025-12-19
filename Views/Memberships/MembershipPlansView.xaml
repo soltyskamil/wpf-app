@@ -13,11 +13,11 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     x:Name="plan_id"
-                    Binding="{Binding Path=plan_id}"
+                    Binding="{Binding Path=membership_plan_id}"
                     Header="id" />
                 <DataGridTextColumn
                     x:Name="name"
-                    Binding="{Binding Path=name}"
+                    Binding="{Binding Path=code}"
                     Header="Nazwa" />
                 <DataGridTextColumn
                     x:Name="durationMonths"
@@ -25,7 +25,7 @@
                     Header="Czas trwania" />
                 <DataGridTextColumn
                     x:Name="cena"
-                    Binding="{Binding Path=price}"
+                    Binding="{Binding Path=total_price}"
                     Header="cena" />
                 <DataGridTextColumn
                     x:Name="opis"

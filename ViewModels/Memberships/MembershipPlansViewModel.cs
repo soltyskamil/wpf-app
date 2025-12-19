@@ -45,7 +45,7 @@ namespace MVVMGym.ViewModels
 
         public MembershipPlansViewModel() : base()
         {
-            base.DisplayName = "Wszystkie plany";
+            base.DisplayName = "Membership plans";
         }
 
 

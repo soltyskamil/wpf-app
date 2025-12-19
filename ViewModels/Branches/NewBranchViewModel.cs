@@ -14,7 +14,7 @@ namespace MVVMGym.ViewModels
 
         public NewBranchViewModel() : base()
         {
-            base.DisplayName = "New branch";
+            base.DisplayName = "Add branch";
             item = new Branches();
             item.created_at = DateTime.Now;
             item.updated_at = DateTime.Now;
