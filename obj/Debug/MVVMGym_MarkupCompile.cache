@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kamil\Desktop\MVVMGym2\MVVMGym\App.xaml
-22-1912172686
+231128284691
 3-1631190407
-65-2091553429
+70852618302
 1811862771913
-Themes\Colors.dark.xaml;Themes\Colors.light.xaml;Themes\Generic.xaml;Themes\Styles.xaml;Views\Branches\BranchSummaryView.xaml;Views\Classes\AllClassesView.xaml;Views\Classes\NewClassView.xaml;Views\Employees\AllEmployeesView.xaml;Views\Employees\EmployeeSummaryView.xaml;Views\Equipment\AllEquipmentView.xaml;Views\Equipment\NewEquipmentView.xaml;Views\Vendors\AllVendorsView.xaml;Views\Branches\BranchesView.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\Memberships\MembershipPlansView.xaml;Views\Branches\NewBranchView.xaml;Views\Employees\NewEmployeeView.xaml;Views\Vendors\NewVendorView.xaml;Views\Promotions\PromotionsView.xaml;Views\Styles.xaml;Views\Vendors\VendorSummaryView.xaml;
+Themes\Colors.dark.xaml;Themes\Colors.light.xaml;Themes\Generic.xaml;Themes\Styles.xaml;Views\Branches\BranchSummaryView.xaml;Views\Classes\AllClassesView.xaml;Views\Classes\NewClassView.xaml;Views\Employees\AllEmployeesView.xaml;Views\Employees\EmployeesDashboardView.xaml;Views\Employees\EmployeeSummaryView.xaml;Views\Equipment\AllEquipmentView.xaml;Views\Equipment\NewEquipmentView.xaml;Views\Vendors\AllVendorsView.xaml;Views\Branches\BranchesView.xaml;Views\MainWindow.xaml;Views\MainWindowResources.xaml;Views\Memberships\MembershipPlansView.xaml;Views\Branches\NewBranchView.xaml;Views\Employees\NewEmployeeView.xaml;Views\Vendors\NewVendorView.xaml;Views\Promotions\PromotionsView.xaml;Views\Styles.xaml;Views\Vendors\VendorSummaryView.xaml;
 
 False
 

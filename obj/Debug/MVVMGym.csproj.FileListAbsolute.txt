@@ -182,3 +182,5 @@ C:\Users\kamil\Desktop\MVVMGym2\MVVMGym\obj\Debug\Themes\Colors.dark.baml
 C:\Users\kamil\Desktop\MVVMGym2\MVVMGym\obj\Debug\Themes\Colors.light.baml
 C:\Users\kamil\Desktop\MVVMGym2\MVVMGym\obj\Debug\Themes\Styles.baml
 C:\Users\kamil\Desktop\MVVMGym2\MVVMGym\obj\Debug\App.baml
+C:\Users\kamil\Desktop\MVVMGym2\MVVMGym\obj\Debug\Views\Employees\EmployeesDashboardView.g.cs
+C:\Users\kamil\Desktop\MVVMGym2\MVVMGym\obj\Debug\Views\Employees\EmployeesDashboardView.baml

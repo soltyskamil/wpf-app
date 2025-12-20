@@ -15,6 +15,9 @@
     <DataTemplate DataType="{x:Type vm:EmployeesSummaryViewModel}">
         <vw:EmployeeSummaryView />
     </DataTemplate>
+    <!--<DataTemplate DataType="{x:Type vm:EquipmentDashboardViewModel}">
+        <vw:EmployeesDashboardView />
+    </DataTemplate>-->
 
     <!--  //Employees  -->
 
@@ -91,7 +94,6 @@
     -->
     <DataTemplate x:Key="WorkspacesTemplate">
         <TabControl
-            Background="{DynamicResource TextPrimaryBrush}"
             BorderBrush="Transparent"
             IsSynchronizedWithCurrentItem="True"
             ItemTemplate="{StaticResource ClosableTabItemTemplate}"

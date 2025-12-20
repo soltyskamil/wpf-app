@@ -17,20 +17,87 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="{DynamicResource TextPrimaryBrush}">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="250" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <Border
+            Grid.Row="0"
+            Grid.Column="0"
+            BorderThickness="0,0,0,2"
+            Style="{DynamicResource DashboardBorderStyle}">
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+
+
+                <materialIcons:MaterialIcon
+                    Width="32"
+                    Height="32"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Kind="ViewDashboard" />
+                <TextBlock
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="32">
+                    Projekt
+                </TextBlock>
+            </StackPanel>
+
+        </Border>
+
+        <Border
+            Grid.Row="0"
+            Grid.Column="1"
+            Padding="50,0,0,0"
+            BorderThickness="2,0,0,2"
+            Style="{DynamicResource DashboardBorderStyle}">
+
+
+            <Border
+                Width="350"
+                Height="35"
+                Padding="4"
+                HorizontalAlignment="Left"
+                BorderBrush="Black"
+                BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Text="Szukaj.." />
+                    <TextBox
+                        Grid.Column="1"
+                        Padding="4"
+                        VerticalAlignment="Center"
+                        BorderThickness="0" />
+                </Grid>
+
+
+            </Border>
+        </Border>
 
 
         <ScrollViewer
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="0"
+            Padding="16"
             VerticalScrollBarVisibility="Hidden">
             <ItemsControl ItemsSource="{Binding Path=Commands}">
                 <ItemsControl.ItemTemplate>
@@ -41,12 +108,9 @@
                             HorizontalContentAlignment="Stretch"
                             Command="{Binding Path=Command}"
                             Style="{DynamicResource NavButtonStyle}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
 
+
+                            <StackPanel Orientation="Horizontal">
 
                                 <materialIcons:MaterialIcon
                                     Grid.Column="0"
@@ -59,22 +123,23 @@
 
                                 <TextBlock
                                     Grid.Column="1"
-                                    FontFamily="Verdana"
                                     Style="{StaticResource NavTextStyle}"
                                     Text="{Binding Path=DisplayName}" />
-                            </Grid>
+                            </StackPanel>
                         </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
 
         </ScrollViewer>
+
         <Border
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="1"
             Margin="0"
-            BorderBrush="{DynamicResource TextPrimaryBrush}"
-            BorderThickness="0">
+            Padding="24"
+            BorderThickness="2,0,0,0"
+            Style="{DynamicResource DashboardBorderStyle}">
 
             <ContentPresenter Content="{Binding Path=Workspaces}" ContentTemplate="{StaticResource WorkspacesTemplate}" />
 

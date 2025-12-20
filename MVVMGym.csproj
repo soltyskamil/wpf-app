@@ -323,10 +323,13 @@
     <Compile Include="ViewModels\Branches\BranchSummaryViewModel.cs" />
     <Compile Include="ViewModels\Classes\AddNewClassViewModel.cs" />
     <Compile Include="ViewModels\Classes\AllClassesViewModel.cs" />
+    <Compile Include="ViewModels\Classes\ClassesDashboardViewModel.cs" />
     <Compile Include="ViewModels\Employees\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModels\Employees\EmployeesSummaryViewModel.cs" />
     <Compile Include="ViewModels\Equipment\AddEquipmentViewModel.cs" />
     <Compile Include="ViewModels\Equipment\EquipmentViewModel.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\OthersDashboardViewModel.cs" />
     <Compile Include="ViewModels\Vendors\AddVendorViewModel.cs" />
     <Compile Include="ViewModels\Vendors\AllVendorsViewModel.cs" />
     <Compile Include="ViewModels\Branches\BranchesViewModel.cs" />
@@ -340,6 +343,7 @@
     <Compile Include="ViewModels\Promotions\PromotionsViewModel.cs" />
     <Compile Include="ViewModels\Vendors\VendorsSummaryViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="ViewModels\WszystkieDashboardViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModel.cs" />
     <Compile Include="Views\Branches\BranchSummaryView.xaml.cs">
       <DependentUpon>BranchSummaryView.xaml</DependentUpon>
@@ -352,6 +356,9 @@
     </Compile>
     <Compile Include="Views\Employees\AllEmployeesView.xaml.cs">
       <DependentUpon>AllEmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employees\EmployeesDashboardView.xaml.cs">
+      <DependentUpon>EmployeesDashboardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Employees\EmployeeSummaryView.xaml.cs">
       <DependentUpon>EmployeeSummaryView.xaml</DependentUpon>
@@ -417,6 +424,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Employees\AllEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Employees\EmployeesDashboardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

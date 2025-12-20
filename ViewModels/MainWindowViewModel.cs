@@ -32,6 +32,15 @@ namespace MVVMGym.ViewModels
         {
             return new List<CommandViewModel> {
                 //employees
+                //new CommandViewModel("Employees","AccountGroup" ,new BaseCommand(() => this.ShowDashboard())),
+                //new CommandViewModel("Equipment","AccountGroup" ,new BaseCommand(() => this.ShowDashboard())),
+                //new CommandViewModel("Classes","AccountGroup" ,new BaseCommand(() => this.ShowDashboard())),
+                //new CommandViewModel("Branches","AccountGroup" ,new BaseCommand(() => this.ShowDashboard())),
+                //new CommandViewModel("Vendors","AccountGroup" ,new BaseCommand(() => this.ShowDashboard())),
+                //new CommandViewModel("Other","AccountGroup" ,new BaseCommand(() => this.ShowDashboard())),
+
+
+
                 new CommandViewModel("All employees","AccountGroup" ,new BaseCommand(() => this.ShowAllEmployees())),
                 new CommandViewModel("Add employee","AccountPlus" ,new BaseCommand(() => this.ShowAddNewEmployee())),
                 new CommandViewModel("Employees summary", "TableAccount", new BaseCommand(() => this.ShowEmployeesSummary())),
@@ -68,6 +77,21 @@ namespace MVVMGym.ViewModels
 
 
         #region Helpers
+        //private void ShowDashboard()
+        //{
+        //    EquipmentDashboardViewModel workspace = this.Workspaces.FirstOrDefault(
+        //        vm => vm is EquipmentDashboardViewModel
+        //        ) as EquipmentDashboardViewModel;
+
+        //    if (workspace == null)
+        //    {
+        //        workspace = new EquipmentDashboardViewModel();
+        //        this.Workspaces.Add(workspace);
+        //    }
+
+        //    this.SetActiveWorkspace(workspace);
+        //}
+
         private void ShowEmployeesSummary()
         {
             EmployeesSummaryViewModel workspace = this.Workspaces.FirstOrDefault(
